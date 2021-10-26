@@ -1,3 +1,5 @@
+package PR1Tutorial.Tut06;
+
 public class Car {
     int eff;
     int container;

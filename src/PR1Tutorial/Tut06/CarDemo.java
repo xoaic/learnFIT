@@ -1,3 +1,5 @@
+package PR1Tutorial.Tut06;
+
 public class CarDemo {
     public static void main(String[] args) {
         Car myHybrid = new Car(20);

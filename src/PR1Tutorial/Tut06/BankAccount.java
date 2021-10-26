@@ -1,3 +1,5 @@
+package PR1Tutorial.Tut06;
+
 import java.util.Scanner;
 
 public class BankAccount {
