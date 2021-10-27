@@ -1,3 +1,5 @@
+package PR1Tutorial.Tut01;
+
 public class CalculateTriangle {
     public static void main(String[] args) {
         double base = 3;

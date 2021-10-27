@@ -1,13 +1,16 @@
-package Class.Tut02.Boat;
+package SE1Tutorial.Tut02;
+
 public class Boat extends Vehicle {
+    private double capacity;
     private double thickness;
+
     public Boat(String name, double width, double height, double length, double weight, double thickness, int seatingCapacity, String registrationNumber, int capacity) {
         super(name, width, height, length, weight, seatingCapacity, registrationNumber);
         this.capacity = capacity;
         this.thickness = thickness;
     }
 
-    public String getThickness() {
+    public double getThickness() {
         return thickness;
     }
     public void setThickness(double thickness) {

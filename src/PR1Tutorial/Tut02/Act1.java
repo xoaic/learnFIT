@@ -1,3 +1,5 @@
+package PR1Tutorial.Tut02;
+
 public class Act1 {
     public static void main(String[] args) {
         double wei = 51.0;

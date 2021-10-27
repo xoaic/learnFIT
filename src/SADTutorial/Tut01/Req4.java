@@ -1,3 +1,5 @@
+package SADTutorial.Tut01;
+
 class Student {
     private String studentId;
     private String studentName;

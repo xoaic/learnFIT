@@ -1,4 +1,4 @@
-package exceptions;
+package SE1Tutorial.Tut03;
 
 public class SumImpl {
     public static class Sum1 {
@@ -12,7 +12,7 @@ public class SumImpl {
          * </pre>
          */
         public static int sum(int[] a) {
-            // not implemented
+            return 0;
         }
     }
     public static class Sum2 {
@@ -26,7 +26,7 @@ public class SumImpl {
          * </pre>
          */
         public static int sum(int[] a) {
-            // not implemented
+            return 0;
         }
     }
 }

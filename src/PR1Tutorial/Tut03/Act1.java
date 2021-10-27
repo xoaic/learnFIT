@@ -1,3 +1,5 @@
+package PR1Tutorial.Tut03;
+
 import java.util.Scanner;
 
 public class Act1 {

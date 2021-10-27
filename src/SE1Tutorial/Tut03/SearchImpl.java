@@ -1,4 +1,4 @@
-package exceptions;
+package SE1Tutorial.Tut03;
 
 import javax.naming.NameNotFoundException;
 
@@ -43,9 +43,12 @@ public class SearchImpl {
          */
         public static int Search(int[] a, int x)
         throws NullPointerException, NotFoundException {
+            int i = 0;
+
             if (a == null) {
                 throw new NullPointerException("Array is null");
             }
+            
             while (true) {
                 try {
                     if (a[i] == x) {

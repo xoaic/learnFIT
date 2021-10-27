@@ -1,3 +1,5 @@
+package PR1Tutorial.Tut01;
+
 public class Greeting {
     public static void main(String[] args) {
         String myName = "Do Minh Vuong";

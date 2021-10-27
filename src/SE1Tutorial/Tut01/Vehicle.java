@@ -1,4 +1,5 @@
-package Class.Tut01.Vehicles;
+package SE1Tutorial.Tut01;
+
 import java.security.InvalidParameterException;
 
 public class Vehicle {

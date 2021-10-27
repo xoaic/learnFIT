@@ -1,4 +1,6 @@
-import tut06.ToolkitTest.Toolkit;
+package SE1Tutorial.Tut06.ToolkitTest;
+
+import SE1Tutorial.Tut06.ToolkitTest.Toolkit;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 

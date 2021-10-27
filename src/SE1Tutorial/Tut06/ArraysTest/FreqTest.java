@@ -1,4 +1,6 @@
-import tut06.ArraysTest.Arrays;
+package SE1Tutorial.Tut06.ArraysTest;
+
+import SE1Tutorial.Tut06.ArraysTest.Arrays;
 import org.junit.Test;
 
 import static org.junit.Assert.assertArrayEquals;

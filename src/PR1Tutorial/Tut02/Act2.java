@@ -1,3 +1,5 @@
+package PR1Tutorial.Tut02;
+
 public class Act2 {
     public static void main(String[] args) {
         int a = 3;

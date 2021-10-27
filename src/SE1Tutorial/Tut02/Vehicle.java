@@ -1,4 +1,5 @@
-package Class.Tut02.Vehicles;
+package SE1Tutorial.Tut02;
+
 import java.security.InvalidParameterException;
 
 public class Vehicle {
@@ -11,11 +12,12 @@ public class Vehicle {
     private String registrationNumber;
     private String symbol;
 
-    public Vehicle(String name, double width, double height, double length, double weight, int seatingCapacity,String registrationNumber) throws InvalidRepException {
+    public Vehicle(String name, double width, double height, double length, double weight, int seatingCapacity,String registrationNumber) {
         this.name = name;
         this.width = width;
         this.height = height;
         this.length = length;
+
         if(!validateWeight(weight)){
         } else {
             this.weight = weight;
@@ -25,7 +27,7 @@ public class Vehicle {
         }else {
             this.seatingCapacity = seatingCapacity;
         }
-        if(!validaterRegistrationNumber(registrationNumber)){
+        if(!validateRegistrationNumber(registrationNumber)){
             System.out.println("invalid registrationNumber");
         } else {
             this.registrationNumber = registrationNumber;

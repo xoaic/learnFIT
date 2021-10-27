@@ -1,3 +1,5 @@
+package PR1Tutorial.Tut01;
+
 public class ExchangeMoney {
     public static void main(String[] args) {
         long VND = 1200000;

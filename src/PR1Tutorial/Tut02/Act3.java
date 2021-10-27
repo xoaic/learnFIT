@@ -1,3 +1,5 @@
+package PR1Tutorial.Tut02;
+
 public class Act3 {
     public static void main(String[] args) {
         int have = 483274;

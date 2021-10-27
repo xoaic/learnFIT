@@ -1,3 +1,5 @@
+package SE1Tutorial.Tut06.ToolkitTest;
+
 /**
  * @overview
  *  Represents a collection of utility procedures that are commonly used in applications.  

@@ -1,3 +1,5 @@
+package SE1Tutorial.Tut04;
+
 import java.util.*;
 
 public class RandomNums implements Iterator<Integer> {

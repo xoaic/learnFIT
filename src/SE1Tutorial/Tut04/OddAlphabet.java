@@ -1,4 +1,7 @@
+package SE1Tutorial.Tut04;
+
 import java.util.*;
+import java.util.Iterator;
 
 public class OddAlphabet implements Iterator<Character> {
     private int current = 65;
@@ -29,7 +32,7 @@ public class OddAlphabet implements Iterator<Character> {
 	}
 
 	private Iterator<Character> iterator() {
-		return new Exercise4();
+		return null;
 	}
 
 	public static void main(String[] args) {

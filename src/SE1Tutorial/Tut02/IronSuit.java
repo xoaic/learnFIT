@@ -1,8 +1,9 @@
-package Class.Tut02.IronSuit;
-public class IronSuit implements Vehicle {
+package SE1Tutorial.Tut02;
+
+public class IronSuit extends Vehicle {
     private String model;
 
-    public IronSuit(String name, double width, double height, double length, double weight, int seatingCapacity, String registrationNumber, String model) throws InvalidRepException {
+    public IronSuit(String name, double width, double height, double length, double weight, int seatingCapacity, String registrationNumber, String model) {
         super(name, width, height, length, weight, seatingCapacity, registrationNumber);
         this.model = model;
     }
@@ -14,7 +15,7 @@ public class IronSuit implements Vehicle {
         this.model = model;
     }
 
-    private boolean validateModel(){
+    private boolean validateModel() {
         return true;
     }
 

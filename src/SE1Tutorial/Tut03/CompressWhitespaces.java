@@ -1,4 +1,4 @@
-package exceptions;
+package SE1Tutorial.Tut03;
 
 import java.io.*;
 

@@ -1,3 +1,5 @@
+package PR1Tutorial.Tut02;
+
 public class Act4 {
     public static void main(String[] args) {
         double n = -0.5;

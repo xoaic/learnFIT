@@ -1,4 +1,5 @@
-package Class.Tut02.Vehicles;
+package SE1Tutorial.Tut02;
+
 public class Car extends Vehicle {
     private String carSymbol = "\uD83D\uDE97 ";
     public Car(String name, double width, double height, double length, double weight, int seatingCapacity, String registrationNumber) {

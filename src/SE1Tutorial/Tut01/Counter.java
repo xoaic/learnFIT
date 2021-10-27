@@ -1,4 +1,4 @@
-package Class.Tut01;
+package SE1Tutorial.Tut01;
 
 /**
  * @attributes

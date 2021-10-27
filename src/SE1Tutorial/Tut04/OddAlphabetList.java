@@ -1,4 +1,8 @@
-import java.util.*;
+package SE1Tutorial.Tut04;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class OddAlphabetList implements Iterator<Integer> {
 		private int start = 64;

@@ -1,3 +1,5 @@
+package SADTutorial.Tut01;
+
 public class Car {
 	private String name;
 	private int speed;

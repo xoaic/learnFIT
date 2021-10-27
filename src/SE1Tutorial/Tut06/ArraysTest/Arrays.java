@@ -1,3 +1,5 @@
+package SE1Tutorial.Tut06.ArraysTest;
+
 /**
  * @overview
  *    a program that implements solutions for a number of problems

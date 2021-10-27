@@ -1,4 +1,7 @@
-package exceptions;
+package SE1Tutorial.Tut03;
+
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class DivisionImpl {
     /**
@@ -33,8 +36,9 @@ public class DivisionImpl {
      * </pre>
      */
     static void divide(double[] a, double[] b) {
+        Scanner scanner = new Scanner(System.in);
+
         try {
-            Scanner scanner = new Scanner(System.in);
             if (a == null || b == null) {
                 throw new NullPointerException();
             } else if (a.length > b.length) {
@@ -54,14 +58,14 @@ public class DivisionImpl {
                             return;
                         } else if (answer.equals("P")) {
                             System.out.print("Re-enter b[" + i + "]: ");
-                            double reEntered = Integer.parseInt(Scanner.nextLine());
+                            double reEntered = Integer.parseInt(scanner.nextLine());
                             d[i] = a[i] / reEntered;
                         }
                     }
                 }
-                System.out.println(Array.toString(d));
+                System.out.println();
             }
-        } catch (IndexOutOfBoundsEXception ex) {
+        } catch (IndexOutOfBoundsException ex) {
             System.out.print("Do you want to (Q)uit or to (P)rovide missing values? ");
             String answer = scanner.nextLine();
             if (answer.equals("Q")) {
@@ -79,6 +83,7 @@ public class DivisionImpl {
             }
         }
     }
+
     public double[] easierDivide(double[] a, double[] b) {
         if (a == null || b == null) {
             throw new NullPointerException("null");
@@ -91,10 +96,11 @@ public class DivisionImpl {
             if (b[i] == 0) {
                 throw new ArithmeticException("division bt zero at index: " + i);
             }
-            d[i] = a[i] / n[i];
+            d[i] = a[i] / b[i];
         }
         return d;
     }
+    
     public static void main(String[] args) {
         divide(
             new double[]{1.0, 2, 3},

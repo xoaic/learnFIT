@@ -1,3 +1,5 @@
+package PR1Tutorial.Tut04;
+
 import java.util.Scanner;
 
 public class printFibonacci {

@@ -1,3 +1,5 @@
+package PR1Tutorial.Tut04;
+
 public class printArmstrong {
     public static void main(String[] args) {
         for (int i = 100; i < 1000; i++) {

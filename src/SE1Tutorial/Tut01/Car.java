@@ -1,4 +1,5 @@
-package Class.Tut01.Vehicles;
+package SE1Tutorial.Tut01;
+
 public class Car extends Vehicle {
     public Car(String name, double width, double height, double length, double weight, int seatingCapacity, String registrationNumber) {
         super(name, width, height, length, weight, seatingCapacity, registrationNumber);

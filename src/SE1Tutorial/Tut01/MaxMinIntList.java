@@ -1,4 +1,5 @@
-package Class.Tut01;
+package SE1Tutorial.Tut01;
+
 import java.util.ArrayList;
 
 public class MaxMinIntList extends ArrayList {
