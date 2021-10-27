@@ -1,3 +1,5 @@
+package NPRTutorial.Tut01;
+
 import java.net.*;
 import java.io.*;
 public class URLConnectionReader2 {

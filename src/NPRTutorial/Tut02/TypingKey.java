@@ -1,3 +1,5 @@
+package NPRTutorial.Tut02;
+
 import java.util.Scanner;
 import java.io.*;
 

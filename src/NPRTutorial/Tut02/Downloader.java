@@ -1,6 +1,6 @@
-package tut02; 
+package NPRTutorial.Tut02;
 import java.io.*; 
-import javs.net.*; 
+import java.net.*; 
 
 public class Downloader { 
     private URL url; 

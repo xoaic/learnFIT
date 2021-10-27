@@ -1,4 +1,4 @@
-package tut02; 
+package NPRTutorial.Tut02;
 import java.io.*; 
 import java.net.*; 
 import java.util.*; 
