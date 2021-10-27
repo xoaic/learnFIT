@@ -32,7 +32,7 @@ public class MulticastReceiver {
         int n = 1; 
         while(true) { 
             MulticastReceiver mr = new MulticastReceiver(); 
-            System.out.println("Message received: " + n + " " + mr.receiveMessage(MULTICAST_IP,MULTICAST_INTERFACE,MULTICAST_PORT)); 
+            System.out.println("Message received: " + n + " " + mr.receiveMessage(MULTICAST_IP,MULTICAST_INTERFACE, MULTICAST_PORT)); 
             n++; 
         }
     }
