@@ -1,3 +1,5 @@
+package NPRTutorial.Tut01;
+
 import java.net.* ;
 public class ParseURL {
     public static void main(String[]args) throws MalformedURLException {
