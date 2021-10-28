@@ -2,7 +2,7 @@ package PR1Tutorial.Tut07;
 
 import java.util.Scanner;
 
-public class reverseString {
+public class StringReverse {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter a string: ");

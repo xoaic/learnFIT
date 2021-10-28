@@ -2,7 +2,7 @@ package PR1Tutorial.Tut07;
 
 import java.util.Scanner;
 
-public class printNumber {
+public class NumberPrinter {
     public static void main(String[] args) throws Exception {
         Scanner input = new Scanner(System.in);
         System.out.print("Please enter an integer between 1000 and 999999: ");
