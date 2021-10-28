@@ -11,10 +11,10 @@ public class PassworkChecker {
         // Check length
         if (charArray.length == 0) throw new Exception("You don't enter a passwork!");
         if (charArray.length >= 8) result += 1;
-        if (charArray.length >= 12) result += 2;
+        if (charArray.length >= 12) result += 1;
         
         // Check upperCase
-        for(int i = 0; i < charArray.length; i++){
+        for (int i = 0; i < charArray.length; i++) {
             if(Character.isUpperCase(charArray[i])) {
                 result += 1;
                 break;
@@ -22,7 +22,7 @@ public class PassworkChecker {
         }
         
         // Check lowerCase
-        for(int i = 0; i < charArray.length; i++){
+        for (int i = 0; i < charArray.length; i++){
             if(Character.isLowerCase(charArray[i])) {
                 result += 1;
                 break;
@@ -30,7 +30,7 @@ public class PassworkChecker {
         }
         
         // Check contain digit
-        for(int i = 0; i < charArray.length; i++){
+        for (int i = 0; i < charArray.length; i++) {
             if(Character.isDigit(charArray[i])) {
                 result += 1;
                 break;
@@ -38,10 +38,9 @@ public class PassworkChecker {
         }
         
         // Check contain symbol
-        for(int i = 0; i < charArray.length; i++){
-            if(specialChars.matches(Character.toString(charArray[i]))) {
+        for (int i = 0; i < charArray.length; i++) {
+            if (specialChars.contains(Character.toString(charArray[i]))) {
                 result += 1;
-                System.out.println("OK");
                 break;
             }
         }
@@ -55,8 +54,9 @@ public class PassworkChecker {
         String pass = input.nextLine();
         System.out.print("Strength: ");
 
-        if (checkPass(pass) < 3) System.out.println(checkPass(pass) + " (weak)");
-        else if (checkPass(pass) < 5) System.out.println(checkPass(pass) + " (medium)");
-        else System.out.println(checkPass(pass) + " (strong)");
+        int output = checkPass(pass);
+        if (output < 3) System.out.println(output + " (weak)");
+        else if (output < 5) System.out.println(output + " (medium)");
+        else System.out.println(output + " (strong)");
     }
 }
