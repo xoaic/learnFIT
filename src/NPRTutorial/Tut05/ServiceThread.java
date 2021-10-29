@@ -1,4 +1,4 @@
-package NPRTutorial.MidProject;
+package NPRTutorial.Tut05;
 
 import java.io.*;
 import java.net.*;
@@ -13,7 +13,7 @@ public class ServiceThread extends Thread {
     public ServiceThread(Socket socketOfServer, int clientNumber) {
         this.clientNumber = clientNumber;
         this.socketOfServer = socketOfServer;
-        log("New connection with client #" + this.clientNumber + " at" + socketOfServer + " on " + new Date());
+        log("New connection with client #" + this.clientNumber + " at " + socketOfServer + " on " + new Date());
     }
 
     @Override

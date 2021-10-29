@@ -1,4 +1,4 @@
-package NPRTutorial.MidProject;
+package NPRTutorial.Tut05;
 
 import java.io.*;
 import java.net.*;
@@ -27,8 +27,6 @@ class ChatRoomServer {
             System.exit(1);
         } finally {
             welcomeSocket.close();
-
-            System.out.println("FROM SERVER: " + );
         }
     }
 }
