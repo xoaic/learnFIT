@@ -59,9 +59,7 @@ app.delete("/words/:word", (req, res) => {
       "message": `Word ${toDelete} is not found!`
     }).end();
   }
-  
 });
-
 
 app.listen(3000, () => {
   console.log('Server running!');

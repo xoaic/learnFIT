@@ -22,7 +22,7 @@ app.get("/hello", (req, res) => {
 
 // words
 const words = {
-  // '네':'yes',
+  '네':'yes',
   '아니요':'no'
 };
 
@@ -46,7 +46,18 @@ app.post("/words", (req, res) => {
 });
 
 app.put("/words/:word", (req, res) => {
-  // handle update word here
+  const toUpdate = req.params.word;
+  if (toUpdate in words) {
+    const body = req.body;
+    words[toUpdate] = body.definition;
+    const resBody = {};
+    resBody[toUpdate] = body.definition;
+    res.status(200).json(resBody).end();
+  } else {
+    res.status(404).json({
+      "message": `Word ${toUpdate} is not found!`
+    }).end();
+  }
 });
 
 app.delete("/words/:word", (req, res) => {
@@ -59,6 +70,7 @@ app.delete("/words/:word", (req, res) => {
       "message": `Word ${toDelete} is not found!`
     }).end();
   }
+  
 });
 
 app.listen(3000, () => {

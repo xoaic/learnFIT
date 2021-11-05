@@ -1,0 +1,202 @@
+{
+	"info": {
+		"_postman_id": "4369c4e9-67a0-4697-bd98-f7e441466261",
+		"name": "wpr-quiz-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Start a new attempt",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/attempts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"attempts"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Example: expected result",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/attempts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"attempts"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1941"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"795-uoMeMQNPUJYizH/vX8eMebjfwUc\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 04 Oct 2021 11:59:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"questions\": [\n        {\n            \"_id\": \"5f6bb6aa97518f0bc82e4234\",\n            \"answers\": [\n                \"<lb>\",\n                \"<break>\",\n                \"<br>\"\n            ],\n            \"text\": \"What is the correct HTML element for inserting a line break?\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5f6bb894d9a1ce2cf0717212\",\n            \"answers\": [\n                \"<a url=\\\"http://www.w3schools.com\\\">W3Schools.com</a>\",\n                \"<a name=\\\"http://www.w3schools.com\\\">W3Schools.com</a>\",\n                \"<a>http://www.w3schools.com</a>\",\n                \"<a href=\\\"http://www.w3schools.com\\\">W3Schools</a>\"\n            ],\n            \"text\": \"What is the correct HTML for creating a hyperlink?\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5f6bb9db08aa20381c380708\",\n            \"answers\": [\n                \"<ol>\",\n                \"<list>\",\n                \"<dl>\",\n                \"<ul>\"\n            ],\n            \"text\": \"How can you make a bulleted list?\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5f6bb73997518f0bc82e4238\",\n            \"answers\": [\n                \" <body sstyle=\\\"background-color:yellow;\\\">\",\n                \"<background>yellow</background>\",\n                \"<body bg=\\\"yellow\\\">\"\n            ],\n            \"text\": \"What is the correct HTML for adding a background color?\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5f6bb94ac5837e328c736cf5\",\n            \"answers\": [\n                \" <table><tr><td>\",\n                \" <table><tr><tt>\",\n                \" <thead><body><tr>\",\n                \" <table><head><tfoot>\"\n            ],\n            \"text\": \"Which of these elements are all <table> elements?\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5f6bb58597518f0bc82e4231\",\n            \"answers\": [\n                \"Mozilla\",\n                \"Microsoft\",\n                \"Google\",\n                \"The World Wide Web Consortium\"\n            ],\n            \"text\": \"Who is making the Web standards?\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5f6bb9b3381b613e202fc797\",\n            \"answers\": [\n                \"<dl>\",\n                \"<ol>\",\n                \"<ul>\",\n                \"<list>\"\n            ],\n            \"text\": \"How can you make a numbered list?\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5f6bb90f309505421cde9ea5\",\n            \"answers\": [\n                \"<a href=\\\"url\\\" target=\\\"_blank\\\">\",\n                \"<a href=\\\"url\\\" target=\\\"new\\\">\",\n                \"<a href=\\\"url\\\" new>\"\n            ],\n            \"text\": \"How can you open a link in a new tab/browser window?\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5f6bb79b97518f0bc82e4239\",\n            \"answers\": [\n                \"<strong>\",\n                \"<i>\",\n                \"<important>\",\n                \"<b>\"\n            ],\n            \"text\": \"Choose the correct HTML element to define important text\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5f6bb98acc65b72a7c5b1ea7\",\n            \"answers\": [\n                \" True\",\n                \" False\"\n            ],\n            \"text\": \"Inline elements are normally displayed without starting a new line.\",\n            \"__v\": 0\n        }\n    ],\n    \"completed\": false,\n    \"score\": 0,\n    \"_id\": \"615aec8fdeda1258bc7aaf1c\",\n    \"startedAt\": \"2021-10-04T11:59:11.271Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Submit & finish attempt",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"answers\": {\r\n        \"5f6bb79b97518f0bc82e4239\": \"0\",\r\n        \"5f6bb98acc65b72a7c5b1ea7\": \"1\",\r\n        \"5f6bb8cbd8d2fe3bf4028283\": \"2\"\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/attempts/:id/submit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"attempts",
+						":id",
+						"submit"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "615aeb83deda1258bc7aaf19"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Example: expected result",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"answers\": {\r\n        \"5f6bb79b97518f0bc82e4239\": \"0\",\r\n        \"5f6bb98acc65b72a7c5b1ea7\": \"1\",\r\n        \"5f6bb8cbd8d2fe3bf4028283\": \"2\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/attempts/:id/submit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"attempts",
+								":id",
+								"submit"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "615aec53deda1258bc7aaf1b"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2335"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"91f-Cwe6LraYt+DCWMcY2e4Oefgp5uY\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 04 Oct 2021 11:59:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"questions\": [\n        {\n            \"_id\": \"5f6bb894d9a1ce2cf0717212\",\n            \"answers\": [\n                \"<a url=\\\"http://www.w3schools.com\\\">W3Schools.com</a>\",\n                \"<a name=\\\"http://www.w3schools.com\\\">W3Schools.com</a>\",\n                \"<a>http://www.w3schools.com</a>\",\n                \"<a href=\\\"http://www.w3schools.com\\\">W3Schools</a>\"\n            ],\n            \"text\": \"What is the correct HTML for creating a hyperlink?\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5f6bb79b97518f0bc82e4239\",\n            \"answers\": [\n                \"<strong>\",\n                \"<i>\",\n                \"<important>\",\n                \"<b>\"\n            ],\n            \"text\": \"Choose the correct HTML element to define important text\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5f6bb94ac5837e328c736cf5\",\n            \"answers\": [\n                \" <table><tr><td>\",\n                \" <table><tr><tt>\",\n                \" <thead><body><tr>\",\n                \" <table><head><tfoot>\"\n            ],\n            \"text\": \"Which of these elements are all <table> elements?\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5f6bb7cb97518f0bc82e423a\",\n            \"answers\": [\n                \"<italic>\",\n                \"<i>\",\n                \"<em>\"\n            ],\n            \"text\": \"Choose the correct HTML element to define emphasized text\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5f6bba1a44470627f8773da6\",\n            \"answers\": [\n                \"<check>\",\n                \"<checkbox>\",\n                \"<input type=\\\"checkbox\\\">\",\n                \"<input type=\\\"check\\\">\"\n            ],\n            \"text\": \"What is the correct HTML for making a checkbox?\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5f6bb9b3381b613e202fc797\",\n            \"answers\": [\n                \"<dl>\",\n                \"<ol>\",\n                \"<ul>\",\n                \"<list>\"\n            ],\n            \"text\": \"How can you make a numbered list?\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5f6bb6aa97518f0bc82e4234\",\n            \"answers\": [\n                \"<lb>\",\n                \"<break>\",\n                \"<br>\"\n            ],\n            \"text\": \"What is the correct HTML element for inserting a line break?\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5f6bb9db08aa20381c380708\",\n            \"answers\": [\n                \"<ol>\",\n                \"<list>\",\n                \"<dl>\",\n                \"<ul>\"\n            ],\n            \"text\": \"How can you make a bulleted list?\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5f6bb58597518f0bc82e4231\",\n            \"answers\": [\n                \"Mozilla\",\n                \"Microsoft\",\n                \"Google\",\n                \"The World Wide Web Consortium\"\n            ],\n            \"text\": \"Who is making the Web standards?\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"5f6bb465933d010004ef1b13\",\n            \"answers\": [\n                \"Hyper Text Markup Language\",\n                \"Hyperlinks and Text Markup Language\",\n                \"Home Tool Markup Language\"\n            ],\n            \"text\": \"What does HTML stand for?\",\n            \"__v\": 0\n        }\n    ],\n    \"completed\": true,\n    \"score\": 1,\n    \"_id\": \"615aec53deda1258bc7aaf1b\",\n    \"correctAnswers\": {\n        \"5f6bb894d9a1ce2cf0717212\": 3,\n        \"5f6bb79b97518f0bc82e4239\": 0,\n        \"5f6bb94ac5837e328c736cf5\": 0,\n        \"5f6bb7cb97518f0bc82e423a\": 0,\n        \"5f6bba1a44470627f8773da6\": 2,\n        \"5f6bb9b3381b613e202fc797\": 1,\n        \"5f6bb6aa97518f0bc82e4234\": 2,\n        \"5f6bb9db08aa20381c380708\": 3,\n        \"5f6bb58597518f0bc82e4231\": 3,\n        \"5f6bb465933d010004ef1b13\": 0\n    },\n    \"startedAt\": \"2021-10-04T11:58:11.413Z\",\n    \"__v\": 0,\n    \"answers\": {\n        \"5f6bb79b97518f0bc82e4239\": \"0\",\n        \"5f6bb98acc65b72a7c5b1ea7\": \"1\",\n        \"5f6bb8cbd8d2fe3bf4028283\": \"2\"\n    },\n    \"scoreText\": \"Practice more to improve it :D\"\n}"
+				}
+			]
+		}
+	]
+}
