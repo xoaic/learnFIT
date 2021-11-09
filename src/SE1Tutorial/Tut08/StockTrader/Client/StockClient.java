@@ -1,10 +1,10 @@
-package stocktrader.client;
-
-import stocktrader.server.StockServer;
+package SE1Tutorial.Tut08.StockTrader.Client;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+
+import SE1Tutorial.Tut08.StockTrader.Server.StockServer;
 
 public class StockClient {
     private static final List<String> SUPPORTED_OPS = Arrays.asList(
@@ -49,7 +49,7 @@ public class StockClient {
             try {
                 System.out.print(promptMessage + " ");
                 return Integer.parseInt(scanner.nextLine());
-            } catch (NumberFormatException _) {
+            } catch (NumberFormatException e) {
                 System.err.println("Invalid number filled, please try again!");
             }
         }

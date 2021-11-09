@@ -1,15 +1,15 @@
-package stocktrader.server;
+package SE1Tutorial.Tut08.StockTrader.Server;
 
-class StockPurchase {
+class StockSell {
     private final int stockNo;
     private final long timestamp;
-    private final double priceAtPurchase;
+    private final double priceAtSell;
     private final int quantity;
 
-    public StockPurchase(int stockNo, long timestamp, double priceAtPurchase, int quantity) {
+    public StockSell(int stockNo, long timestamp, double priceAtSell, int quantity) {
         this.stockNo = stockNo;
         this.timestamp = timestamp;
-        this.priceAtPurchase = priceAtPurchase;
+        this.priceAtSell = priceAtSell;
         this.quantity = quantity;
     }
 
@@ -22,7 +22,7 @@ class StockPurchase {
     }
 
     public double getPriceAtPurchase() {
-        return priceAtPurchase;
+        return priceAtSell;
     }
 
     public int getQuantity() {
