@@ -1,16 +1,55 @@
-const DATABASE_NAME = 'eng-dict2';
-const MONGO_URL = `mongodb://localhost:27017/${DATABASE_NAME}`;
+const express = require("express");
+const { MongoClient, Db, Collection } = require("mongodb");
+const { ObjectID } = require("bson");
+const app = express();
 
-let db = null;
-let collection = null;
+// serve static files
+app.use(express.static(__dirname + "/public"));
+app.use(express.json());
 
-async function startServer() {
-// Set the db and collection variables before starting the server.
-  const client = await mongodb.MongoClient.connect(MONGO_URL);
+// db setup
+const DB_NAME = "attempts";
+const MONGO_URL = `mongodb://localhost:27017/${DB_NAME}`;
+
+/** @type {Db} */
+let db;
+let id = null;
+
+app.post("/attempts", async (_, res) => {
+  const questions = [];
+  id = ObjectID();
+
+  // create a new Attempt with 10 random questions from the questions collection
+  const data = await db.collection("questions").aggregate([{ $sample: { size: 10 }}]).toArray();
+
+  data.forEach((ele, index) => {
+    questions[index] = {
+      _id: ele._id,
+      answers: ele.answers,
+      text: ele.text
+    }
+  });
+
+  // create Attempt (contains attempt ID & an array of questions)
+  const resBody = {
+    _id: id,
+    questions: questions,
+    startedAt: new Date(),
+    completed: false
+  };
+  console.log(data);
+  return res.status(201).json(resBody).end();
+});
+
+// app.post("/attempts/:id/submit", async (req, res) => {
+// });
+
+const setupDb = async () => {
+  const client = await MongoClient.connect(MONGO_URL);
   db = client.db();
-  collection = db.collection('words');
-  // Now every route can safely use the db and collection objects.
-  await app.listen(3000);
-  console.log('Listening on port 3000');
-}
-startServer();
+};
+
+app.listen(3000, async () => {
+  await setupDb();
+  console.log('Server running!');
+});
