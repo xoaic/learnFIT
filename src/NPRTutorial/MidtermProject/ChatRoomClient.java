@@ -20,8 +20,10 @@ public class ChatRoomClient {
         String name = input.nextLine();
 
         Socket client = new Socket(host, port);
-        ReadClient read = new ReadClient(client);
+        DataOutputStream dos = new DataOutputStream (client.getOutputStream());
+        dos.writeUTF(name);
         System.out.println("Connected! Start message...");
+        ReadClient read = new ReadClient(client);
         read.start();
         WriteClient write = new WriteClient(client, name);
         write.start();

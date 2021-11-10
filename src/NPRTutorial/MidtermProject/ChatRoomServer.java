@@ -3,12 +3,12 @@ package NPRTutorial.MidtermProject;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ChatRoomServer {
     private int port;
-    public static ArrayList<Socket> ListSK;
+    public static Map<String, Socket> ListSK = new HashMap<>();
 
     public ChatRoomServer(int port) {
         this.port = port;
@@ -16,76 +16,75 @@ public class ChatRoomServer {
 
     private void execute() throws IOException {
         ServerSocket server = new ServerSocket(port);
-        WriteServer write = new WriteServer();
-        write.start();
         
         while (true) {
             Socket socket = server.accept();
             System.out.println("Accept a client with " + socket);
-            ChatRoomServer.ListSK.add(socket);
-            ReadServer read = new ReadServer(socket);
-            read.start();
+            DataInputStream dis = new DataInputStream(socket.getInputStream());
+            String name = dis.readUTF();
+            ChatRoomServer.ListSK.put(name, socket);
+            ContactServer contact = new ContactServer(name);
+            contact.start();
         }
     }
 
     public static void main(String[] args) throws IOException {
-        ChatRoomServer.ListSK = new ArrayList<>();
         ChatRoomServer server = new ChatRoomServer(9876);
         System.out.println("Server is waiting to accept user...");
         server.execute();
     }
+
+    public Socket accept() {
+        return null;
+    }
 }
 
-class ReadServer extends Thread {
-    private Socket socket;
+class ContactServer extends Thread {
+    private String name;
 
-    public ReadServer(Socket socket) {
-        this.socket = socket;
+    public ContactServer(String name) {
+        this.name = name;
     }
 
     @Override
     public void run() {
         try {
+            Socket socket = ChatRoomServer.ListSK.get(name);
             DataInputStream dis = new DataInputStream(socket.getInputStream());
             while (true) {
                 String message = dis.readUTF();
                 if (message.contains("exit")) {
-                    ChatRoomServer.ListSK.remove(socket);
-                    dis.close();
+                    ChatRoomServer.ListSK.remove(name);
                     System.out.println("Disconnected to " + socket);
-                    socket.close();
+                    for (Socket item : ChatRoomServer.ListSK.values()) {
+                        if (item.getPort() != socket.getPort()) {
+                            DataOutputStream dos = new DataOutputStream(item.getOutputStream());
+                            dos.writeUTF("SERVER: " + name + " is offline!");
+                        }
+                    }
                     continue;
                 }
-                for (Socket item : ChatRoomServer.ListSK) {
+                if (message.contains("who online?")) {
+                    DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
+                    dos.writeUTF("SERVER: " + ChatRoomServer.ListSK.keySet() + " are online!");
+                    continue;
+                }
+                if (message.contains("chat to")) {
+                    String privateMessage = message.substring(message.indexOf(">") + 2, message.length());
+                    String toName = message.substring(message.indexOf("to") + 3, message.indexOf(" >"));
+                    DataOutputStream dos = new DataOutputStream(ChatRoomServer.ListSK.get(toName).getOutputStream());
+                    dos.writeUTF("(private) " + name + ": " + privateMessage);
+                    continue;
+                }
+                for (Socket item : ChatRoomServer.ListSK.values()) {
                     if (item.getPort() != socket.getPort()) {
                         DataOutputStream dos = new DataOutputStream(item.getOutputStream());
                         dos.writeUTF(message);
                     }
                 }
-                System.out.println(message);
             }
         } catch (IOException e) {
             e.printStackTrace();
-        }
-    }
-}
-
-class WriteServer extends Thread {
-    @Override
-    public void run() {
-        DataOutputStream dos = null;
-        Scanner input = new Scanner(System.in);
-
-        while (true) {
-            String message = input.nextLine();
-            try {
-                for (Socket item : ChatRoomServer.ListSK) {
-                    dos = new DataOutputStream(item.getOutputStream());
-                    dos.writeUTF("Server: " + message);
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
     }
 }
