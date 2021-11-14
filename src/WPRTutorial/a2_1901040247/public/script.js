@@ -110,8 +110,10 @@ async function renderResults() {
     })
     .then(response => response.json())
     .then(data => {
-        if (completed === false) score = data.score
-        scoreText = data.scoreText
+        if (completed === false) {
+            score = data.score
+            scoreText = data.scoreText
+        }
         answersList = data.questions
         completed = data.completed
     });
