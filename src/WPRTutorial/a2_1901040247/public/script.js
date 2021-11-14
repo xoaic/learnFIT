@@ -8,21 +8,30 @@ const startButton = introScreen.querySelector("#button-1")
 const submitButton = attemptScreen.querySelector("#button-2")
 const resetButton = reviewScreen.querySelector("#button-3")
 
-const API = "https://wpr-quiz-api.herokuapp.com/attempts"
+const API = "http://localhost:3000/attempts"
 
 let questionsList = []
 let questionsID = ""
 let answersList = []
-let scoreText = ""
-let selectedAnswer = []
+let selectedAnswers = []
+let completed = false
 
 // Get answers from user
 function getUserAnswers() {
-    for (var i = 1; i <= questionsList.length; i++)
+    for (let i = 1; i <= questionsList.length; i++)
         for (let j = 0; j < questionsList[i-1].answers.length; j++) {
             const check = document.querySelector(`#opt-${i}-${j+1}`)
-            if (check.checked === true) 
-                selectedAnswer[i-1] = j
+            if (check.checked === true) {
+                selectedAnswers[i-1] = {
+                    id: questionsList[i-1]._id,
+                    selectedIndex: j
+                }
+            } else {
+                selectedAnswers[i-1] = {
+                    id: questionsList[i-1]._id,
+                    selectedIndex: -1
+                }
+            }
         }
 }
 
@@ -88,18 +97,23 @@ async function renderResults() {
     const percentResult = document.querySelector("#percent")
     const comment = document.querySelector("#comment")
 
-    let score = 0
-    let percent = 0
-
     getUserAnswers()
 
     // Fetch new API & get answers
-    const submitAPI = `https://wpr-quiz-api.herokuapp.com/attempts/${questionsID}/submit`
-    await fetch(submitAPI, {method: "POST"})
+    const submitAPI = `${API}/${questionsID}/submit`
+    await fetch(submitAPI, {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(selectedAnswers)
+    })
     .then(response => response.json())
     .then(data => {
-        answersList = data.correctAnswers
+        if (completed === false) score = data.score
         scoreText = data.scoreText
+        answersList = data.questions
+        completed = data.completed
     });
 
     // Show Results
@@ -139,7 +153,7 @@ async function renderResults() {
             ansBox.appendChild(span)
 
             // Render correct answer
-            if (answersList[questionBlock.id] === j) {
+            if (answersList[i-1].correctAnswer === j) {
                 const correctAnswer = document.createElement('span')
                 correctAnswer.classList.add("answer-flag")
                 correctAnswer.textContent = "Correct Answer"
@@ -148,10 +162,10 @@ async function renderResults() {
             }
 
             // Render user answer & check correct answer
-            if (selectedAnswer[i-1] === j) {
+            if (selectedAnswers[i-1].selectedIndex === j) {
                 const userAnswer = document.createElement('span')
                 input.checked = true
-                if (answersList[questionBlock.id] !== j) {
+                if (answersList[i-1].correctAnswer !== j) {
                     userAnswer.classList.add("answer-flag")
                     userAnswer.textContent = "Your answer"
                     ansBox.appendChild(userAnswer)
@@ -159,7 +173,6 @@ async function renderResults() {
                 } else {
                     ansBox.classList.remove("wrong-answer")
                     ansBox.classList.add("correct-answer")
-                    score++;
                 }
             }
 
@@ -175,14 +188,9 @@ async function renderResults() {
     }
 
     // Summary
-    scoreResult.textContent = `${score}/${questionsList.length}`
+    scoreResult.textContent = `${score}`
     percentResult.textContent = `${score/questionsList.length*100}%`
-    if (score/questionsList.length < 1) comment.textContent = scoreText
-    else {
-        comment.textContent = "Good job! You don't need to learn more :D"
-        resetButton.classList.add("hidden")
-        setTimeout(() => resetButton.classList.remove("hidden"), 5000); //:D
-    }
+    comment.textContent = scoreText
 }
 
 // Start Quiz
@@ -207,6 +215,6 @@ resetButton.onclick = function() {
     attemptScreen.classList.remove("hidden")
     attemptsBlock.innerHTML = ""
     resultBlock.innerHTML = ""
-    selectedAnswer = []
+    selectedAnswers = []
     renderAttempts()
 }
