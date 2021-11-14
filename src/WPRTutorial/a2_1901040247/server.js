@@ -1,8 +1,10 @@
 const express = require("express");
 const mongodb = require("mongodb");
+const cors = require('cors')
 const { ObjectID } = require("bson");
 const app = express();
 
+app.use(cors())
 app.use(express.static(__dirname + "/public"));
 app.use(express.json());
 
@@ -15,15 +17,17 @@ async function startServer() {
   const client  = await mongodb.MongoClient.connect("mongodb://127.0.0.1:27017/wpr-quiz");
   db = client.db();
   console.log("Connected to db");
-  app.listen(3000);
+  app.listen(3002);
   console.log("Server running!");
 };
 startServer();
 
+// save attempt to DB, ko luu local
 app.post("/attempts", async (_, res) => {
   // create a new Attempt with 10 random questions from the questions collection
   data = await db.collection("questions").aggregate([{ $sample: { size: 10 }}]).toArray();
 
+  // use array.push() ??
   data.forEach((ele, index) => {
     questions[index] = {
       _id: ele._id,
@@ -60,11 +64,12 @@ app.post("/attempts/:id/submit", async (req, res) => {
   else if (score >= 7 && score < 9) scoreText = "Well done!";
   else scoreText = "Perfect!!"
 
+  // es6 syntax
   const resBody = {
     _id: id,
-    questions: questions,
+    questions,
     answers: userAnswers,
-    score: score,
+    score,
     scoreText: scoreText,
     startedAt: new Date(),
     completed: true

@@ -8,34 +8,42 @@ const startButton = introScreen.querySelector("#button-1")
 const submitButton = attemptScreen.querySelector("#button-2")
 const resetButton = reviewScreen.querySelector("#button-3")
 
-const API = "http://localhost:3000/attempts"
+const API = "http://localhost:3002/attempts"
 
 let questionsList = []
 let questionsID = ""
 let answersList = []
-let selectedAnswers = []
+let selectedAnswers = {}
 let completed = false
 
 // Get answers from user
 function getUserAnswers() {
-    for (let i = 1; i <= questionsList.length; i++)
-        for (let j = 0; j < questionsList[i-1].answers.length; j++) {
-            const check = document.querySelector(`#opt-${i}-${j+1}`)
-            if (check.checked === true) {
-                selectedAnswers[i-1] = {
-                    id: questionsList[i-1]._id,
-                    selectedIndex: j
-                }
-            } else {
-                selectedAnswers[i-1] = {
-                    id: questionsList[i-1]._id,
-                    selectedIndex: -1
-                }
-            }
+    // for (let i = 1; i <= questionsList.length; i++)
+    //     for (let j = 0; j < questionsList[i-1].answers.length; j++) {
+    //         const check = document.querySelector(`#opt-${i}-${j+1}`)
+    //         if (check.checked === true) {
+    //             selectedAnswers[i-1] = {
+    //                 id: questionsList[i-1]._id,
+    //                 selectedIndex: j
+    //             }
+    //         } else {
+    //             selectedAnswers[i-1] = {
+    //                 id: questionsList[i-1]._id,
+    //                 selectedIndex: -1
+    //             }
+    //         }
+    //     }
+    const inputs = document.body.querySelectorAll('input[type=radio]:checked')
+    inputs.forEach((item, index) => {
+        if (item.checked) {
+            selectedAnswers[questionsList[index]._id] = item.value
         }
+    })
 }
 
 // Render Quiz
+// dung` await roi thi thoi ko dung .then()
+
 async function renderAttempts() {
     // Fetch API & get questions
     await fetch(API, {method: "POST"})
@@ -72,6 +80,7 @@ async function renderAttempts() {
             input.setAttribute("name", `opt-${i}`)
             input.setAttribute("class", "rad")
             input.setAttribute("id", `opt-${i}-${j+1}`)
+            input.setAttribute("value", `${j}`)
 
             // Label
             const label = document.createElement("label")
@@ -139,7 +148,7 @@ async function renderResults() {
             let ansBox = document.createElement("div")
             ansBox.className = "res"
             const span = document.createElement("span")
-            
+
             // Input
             const input = document.createElement("input")
             input.setAttribute("type", "radio")
