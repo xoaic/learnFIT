@@ -3,29 +3,28 @@ package PR1Tutorial.Tut09;
 import java.io.PrintWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 class Act4 {
     static int m = 0;
-    static String[] strArray;
-    static int[] intArray;
+    static String[] strArray = new String[0];
+    static char[] charArray = new char[0];
 
     // Backtracking algorithm in my mine
-    static String[] createArray(int l, int n) {
+    static String[] createArray(int j, int n) {
         for (int i = 0; i < 2; i++) {
-            for (int j = l; j < n; j++) {
-                intArray[j] = i;
+            while (true) {
+                charArray[j] = Character.forDigit(i, 10);
                 if (j == 4) {
+                    strArray[m] = "".copyValueOf(charArray, 0, n);
                     m++;
-                    strArray[m] = Arrays.toString(intArray);
-                    break;
+                    if (i == 1) {
+                        j--;
+                        return strArray;
+                    } else break;
                 }
-                if (i == 1) {
-                    l--;
-                    return strArray;
-                }
-                createArray(j++, n);
+                createArray(j+1, n);
+                break;
             }
         }
         return strArray;
@@ -45,24 +44,25 @@ class Act4 {
             check1 += "A";
         }
         String check2 = check1 + "A";
-        intArray = new int[n];
+        strArray = new String[(int) Math.pow(2, n)];
+        charArray = new char[n];
         input.close();
         createArray(0, n);
         for (int i = 0; i < strArray.length; i++) {
-            strArray[i].replaceAll("0", "A");
-            strArray[i].replaceAll("1", "B");
-            if (strArray[i].contains(check1)) {
-                if (strArray[i].contains(check2)) {
-                    break;
+            strArray[i] = strArray[i].replaceAll("0", "A");
+            strArray[i] = strArray[i].replaceAll("1", "B");
+            if (strArray[i].contains(check1) == true) {
+                if (strArray[i].contains(check2) == false) {
+                    strArray2.add(strArray[i]);
                 }
-                strArray2.add(strArray[i]);
             }
         }
         try {
             PrintWriter fileOut = new PrintWriter("ketqua.txt");
             fileOut.println(strArray2.size());
             for (int i = 0; i < strArray2.size(); i++) {
-                fileOut.println(strArray2.get(i));
+                if (i == strArray2.size()-1) fileOut.print(strArray2.get(i));
+                else fileOut.println(strArray2.get(i));
             }
             fileOut.close();
         } catch (Exception e) {
