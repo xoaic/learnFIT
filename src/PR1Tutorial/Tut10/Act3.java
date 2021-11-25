@@ -13,6 +13,9 @@ class Act3 {
         ObjectInputStream ois = new ObjectInputStream(fis);
         strOutput = ois.readObject();
         ois.close();
-        System.out.println(strOutput.toString());
-    } 
+        ArrayList<String> stringList = (ArrayList<String>)(Object)(strOutput);
+        for (int i = 0; i < stringList.size(); i++) {
+            System.out.println("The string " + (i+1) + " is: " + stringList.get(i));
+        }
+    }
 }
