@@ -7,15 +7,14 @@ import java.util.ArrayList;
 
 class Act3 {
     public static void main(String[] args) throws Exception {
-        Object strOutput = new ArrayList<String>();
+        ArrayList strOutput = new ArrayList<String>();
         File f = new File("data.bin");
         FileInputStream fis = new FileInputStream(f);
         ObjectInputStream ois = new ObjectInputStream(fis);
-        strOutput = ois.readObject();
+        strOutput = (ArrayList<String>) ois.readObject();
         ois.close();
-        ArrayList<String> stringList = (ArrayList<String>)(Object)(strOutput);
-        for (int i = 0; i < stringList.size(); i++) {
-            System.out.println("The string " + (i+1) + " is: " + stringList.get(i));
+        for (int i = 0; i < strOutput.size(); i++) {
+            System.out.println("The string " + (i+1) + " is: " + strOutput.get(i));
         }
     }
 }
