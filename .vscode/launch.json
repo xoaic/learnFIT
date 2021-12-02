@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Act3",
+            "request": "launch",
+            "mainClass": "PR1Tutorial.Tut11.Act3",
+            "projectName": "learnFIT_1da55fba"
+        },
+        {
+            "type": "java",
             "name": "Launch ScoreChecker",
             "request": "launch",
             "mainClass": "PR1Tutorial.Tut11.ScoreChecker",
