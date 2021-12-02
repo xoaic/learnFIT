@@ -5,6 +5,20 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Launch ScoreChecker",
+            "request": "launch",
+            "mainClass": "PR1Tutorial.Tut11.ScoreChecker",
+            "projectName": "learnFIT_1da55fba"
+        },
+        {
+            "type": "java",
+            "name": "Launch EngVieDictionary",
+            "request": "launch",
+            "mainClass": "PR1Tutorial.Tut11.EngVieDictionary",
+            "projectName": "learnFIT_1da55fba"
+        },
+        {
             "type": "pwa-msedge",
             "request": "launch",
             "name": "Launch Edge against localhost",

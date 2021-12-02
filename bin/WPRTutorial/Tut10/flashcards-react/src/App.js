@@ -1,10 +1,6 @@
 import React from "react";
 
 class App extends React.Component {
-  /**
-   * 
-   * @param {{words: {[key: string]: string}}} props 
-   */
   constructor(props) {
     super(props);
     this.state = {
@@ -44,11 +40,8 @@ class App extends React.Component {
       <>
         <div id="flashcard-container">
           <div class="flashcard-box" onClick={this.flip}>
-            {this.state.showingWord && // if (this.state.showingWord === true)
-              <div class="flashcard word">{word}</div> || // && = then ; || = else 
-              <div class="flashcard definition">{definition}</div>}
-        </div>
-
+            {this.state.showingWord && <div class="flashcard word">{word}</div> || <div class="flashcard definition">{definition}</div>}
+          </div>
         </div>
 
         <div id="status-bar">
@@ -64,5 +57,4 @@ class App extends React.Component {
     )
   }
 }
-
 export default App;
