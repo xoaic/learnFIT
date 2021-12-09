@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch ArrayIntersectionDemo",
+            "request": "launch",
+            "mainClass": "PR1Tutorial.Tut12.ArrayIntersectionDemo",
+            "projectName": "learnFIT_1da55fba"
+        },
+        {
+            "type": "java",
+            "name": "Launch SelectionSortDemo",
+            "request": "launch",
+            "mainClass": "PR1Tutorial.Tut12.SelectionSortDemo",
+            "projectName": "learnFIT_1da55fba"
+        },
+        {
+            "type": "java",
+            "name": "Launch BinarySearchDemo",
+            "request": "launch",
+            "mainClass": "PR1Tutorial.Tut12.BinarySearchDemo",
+            "projectName": "learnFIT_1da55fba"
+        },
+        {
+            "type": "java",
             "name": "Launch Act4",
             "request": "launch",
             "mainClass": "PR1Tutorial.Tut11.Act4",
