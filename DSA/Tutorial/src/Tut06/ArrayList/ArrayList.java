@@ -5,7 +5,7 @@
  * @author (nxthang) 
  * @version (1.0)
  */
-package Tut06;
+package Tut06.ArrayList;
 public class ArrayList
 {
     private int[] items;
@@ -62,10 +62,15 @@ public class ArrayList
    
     public void remove(int pos)
     {
-        //Ads! drawUp.Vn | drawUp Viet Nam
-        length--;
-        for (int i=pos; i<length; i++)
-            items[i]=items[i+1];
+        if (isEmpty()) {
+            if (pos == 1) {
+                length=0;
+            } else {
+                length--;
+                for (int i = pos; i < length; i++)
+                    items[i] = items[i + 1];
+            }
+        }
     }
     
     /**

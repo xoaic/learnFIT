@@ -1,13 +1,12 @@
-package Tut10.Person;
+package Tut10.BookShop;
 
-public class Child extends Person {
-    public Child(String name, int age) {
-        super(name, age);
+public class GoldenEditionBook extends Book {
+    public GoldenEditionBook(String title, String author, double price) {
+        super(title, author, price);
     }
 
     @Override
-    protected void setAge(int age) throws IllegalArgumentException {
-        if (age >= 15) throw new IllegalArgumentException("Child's age must be less than 15!");
-        super.setAge(age);
+    public double getPrice() {
+        return super.getPrice() * 1.3;
     }
 }

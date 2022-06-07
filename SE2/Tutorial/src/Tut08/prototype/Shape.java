@@ -1,8 +1,7 @@
-package to_dos.prototype;
+package Tut08.prototype;
 
 // Create the Shape abstract class implementing Cloneable interface.
 public abstract class Shape implements Cloneable {
-
 	private String id;
 	protected String type;
 
@@ -10,6 +9,21 @@ public abstract class Shape implements Cloneable {
 	abstract void draw();
 
 	// TO-DO: Implement GETTERs & SETTERs methods for given attributes
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
 
 	public Object clone() {
 		Object clone = null;

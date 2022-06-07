@@ -1,0 +1,189 @@
+@import "https://fonts.googleapis.com/css2?family=Comfortaa";
+
+* {
+    font-family: 'Comfortaa', serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(204, 204, 204, 0.349);
+}
+
+.login-container {
+    border-radius: 10px;
+    border: 2px solid rgba(219, 219, 219, 0.808);
+}
+
+.login-container .login-title {
+    border-collapse: collapse;
+    background-color: rgb(225, 225, 225);
+    padding: 5px 0;
+    border-radius: 10px 10px 0 0;
+}
+
+.login-container .login-title p {
+    padding: 10px;
+    font-size: 15pt;
+    text-align: center;
+    font-weight: bold;
+}
+
+#login-form {
+    border-radius: 0 0 10px 10px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#login-form input,
+#login-form button,
+#login-form p {
+    padding: 10px;
+    margin: 10px 40px;
+    font-size: 15pt;
+}
+
+#login-form .err-msg {
+    margin-left: 40px;
+}
+
+#login-form input {
+    margin-top: 30px;
+}
+
+#login-form input[type='checkbox'] {
+    margin-right: 10px;
+}
+
+#login-form a {
+    font-style: italic;
+}
+
+#login-form a:hover {
+    color: red;
+}
+
+#login-form label {
+    font-size: 12pt;
+}
+
+#login-form input,
+button {
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+#login-form input:hover {
+    background-color: rgba(197, 197, 197, 0.301);
+}
+
+#login-form button:hover {
+    background-color: rgb(1, 128, 128);
+}
+
+#login-form button {
+    color: white;
+    background-color: rgb(2, 187, 73);
+    text-align: center;
+    letter-spacing: 0.1rem;
+}
+
+.registerHref {
+    font-size: 95% !important;
+}
+
+label.error, .err-msg span {
+    color: red;
+    font-size: 80% !important;
+    font-style: italic;
+}
+
+label.error {
+    margin-left: 40px;
+}
+
+@media screen and (max-width: 600px) {
+    .login-container {
+        width: 400px;
+    }
+    .login-container .login-title p,
+    .login-box input,
+    .login-box button,
+    .login-box a {
+        font-size: 12pt;
+    }
+    .login-box label {
+        font-size: 10pt;
+    }
+    .login-box input[type='checkbox'] {
+        margin-right: 7px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .login-container {
+        width: 350px;
+    }
+    .login-container .login-title p,
+    .login-box input,
+    .login-box button,
+    .login-box a {
+        font-size: 10pt;
+    }
+    .login-box label {
+        font-size: 8pt;
+    }
+    .login-box input[type='checkbox'] {
+        margin-right: 5px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .login-container {
+        width: 250px;
+    }
+    .login-container .login-title p,
+    .login-box input,
+    .login-box button,
+    .login-box a {
+        font-size: 10pt;
+    }
+    .login-box input,
+    .login-box button,
+    .login-box a {
+        margin: 10px 30px;
+    }
+    .login-box input[type='checkbox'] {
+        margin-right: 3px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .login-container {
+        width: 200px;
+    }
+    .login-container .login-title p,
+    .login-box input,
+    .login-box button,
+    .login-box a {
+        font-size: 7pt;
+    }
+    .login-box input,
+    .login-box button,
+    .login-box a {
+        margin: 10px 10px;
+    }
+    .login-box input[type='checkbox'] {
+        margin-right: 2px;
+    }
+    .login-box label {
+        font-size: 8pt;
+    }
+}

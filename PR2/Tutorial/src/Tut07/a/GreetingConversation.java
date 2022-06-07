@@ -1,4 +1,4 @@
-package Tut06.a;
+package Tut07.a;
 
 import java.util.Scanner;
 

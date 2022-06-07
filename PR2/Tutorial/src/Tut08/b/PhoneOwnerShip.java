@@ -1,4 +1,4 @@
-package Tut07.b;
+package Tut08.b;
 
 import utils.AttrRef;
 import utils.DOpt;
@@ -26,35 +26,65 @@ public class PhoneOwnerShip {
     private MobilePhone phone;
 
     // BEHAVIOR SPACE
-
+    /**
+     * @effects
+     *   if owner, phone are valid
+     *      initialise this as <o,p>
+     *   else
+     *      throws NotPossibleException
+     */
     public PhoneOwnerShip(@AttrRef("owner") Person owner, @AttrRef("phone") MobilePhone phone) throws NotPossibleException {
         this.owner = owner;
         this.phone = phone;
+        if (!repOK())
+            throw new NotPossibleException("invalid input!");
     }
 
     /**
      * @effects
-     * if name is valid
-     * set this.owner to owner
-     * return true
-     * else
-     * return false
+     *   if owner is valid
+     *      set owner to this.owner
+     *   else
+     *      throws NotPossibleException
      */
     @DOpt(type=OptType.Mutator) @AttrRef("owner")
     public void setOwner(Person owner) {
-        this.owner = owner;
+        if (validateOwner(owner)) this.owner = owner;
+        else throw new NotPossibleException("invalid owner!");
+    }
+
+    @Override
+    public String toString() {
+        return "Owner: " + owner.toString() + ", Phone: " + phone.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        return true;
     }
 
     /**
      * @effects
-     * if name is valid
-     * set this.phone to phone
-     * return true
-     * else
-     * return false
+     *   if phone is valid
+     *      set phone to this.phone
+     *   else
+     *      throws NotPossibleException
      */
     @DOpt(type=OptType.Mutator) @AttrRef("phone")
     public void setPhone(MobilePhone phone) {
-        this.phone = phone;
+        if (validatePhone(phone)) this.phone = phone;
+        else throw new NotPossibleException("invalid phone!");
+    }
+
+    public boolean validateOwner(Person owner) {
+        return true;
+    }
+
+    public boolean validatePhone(MobilePhone phone) {
+        return true;
+    }
+
+    public boolean repOK() {
+        return validateOwner(owner) && validatePhone(phone);
     }
 }

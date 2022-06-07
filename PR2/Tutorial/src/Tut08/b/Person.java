@@ -1,4 +1,4 @@
-package Tut07.b;
+package Tut08.b;
 
 import utils.AttrRef;
 import utils.DOpt;
@@ -26,34 +26,46 @@ public class Person {
     private String name;
 
     // BEHAVIOR SPACE
-    public Person (@AttrRef("id") int id, @AttrRef("name") String name) throws NotPossibleException {
+    /**
+     * @effects
+     *   if id, name are valid
+     *      initialise this as <id, name>
+     *   else
+     *      throws NotPossibleException
+     */
+    public Person (@AttrRef("id") int id, @AttrRef("name") String name) {
         this.id = id;
         this.name = name;
+        if (!repOK())
+            throw new NotPossibleException("invalid input!");
     }
 
     /**
      * @effects
-     * if name is valid
-     * set this.name to name
-     * return true
-     * else
-     * return false
+     *   if name is valid
+     *      set name to this.name
+     *   else
+     *      throws NotPossibleException
      */
     @DOpt(type=OptType.Mutator) @AttrRef("name")
     public void setName(String name) {
-        this.name = name;
+        if (validateName(name)) this.name = name;
+        else throw new NotPossibleException("invalid name!");
     }
 
     /**
-     * @effects return greet message
+     * @effects return greeting message
      */
     public String greet() {
-        return "Hello, " + this.name + "! Your info is in our system.";
+        return "Hello, " + name + "! Your info is in our system.";
     }
 
     @Override
     public String toString() {
-        return "";
+        return "Person{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
     }
 
     @Override
@@ -63,12 +75,37 @@ public class Person {
 
     /**
      * @effects
-     * if this satisfies abstract properties
-     * return true
-     * else
-     * return false
+     *   if id > 0
+     *      return true
+     *   else
+     *      return false
+     */
+    public boolean validateId(int id) {
+        return id > 0;
+    }
+
+    /**
+     * @effects
+     *   if name contains an invalid character
+     *      return false
+     *   else
+     *      return true
+     */
+    public boolean validateName(String name) {
+        for (char c : name.toLowerCase().toCharArray()) {
+            if (((int)c < 97 || (int)c > 122)) return false;
+        }
+        return true;
+    }
+
+    /**
+     * @effects
+     *   if id, name are valid
+     *      return true
+     *   else
+     *      return false
      */
     public boolean repOK() {
-        return true;
+        return validateId(id) && validateName(name);
     }
 }

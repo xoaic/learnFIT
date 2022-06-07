@@ -1,11 +1,11 @@
-package to_dos.prototype;
+package Tut08.prototype;
 
 // Create the Square concrete class which extends the Shape abstract class
 public class Square extends Shape {
 	// TO-DO: Declare the constructor
 	public Square() {
 		// Set type to be similar with class name
-
+		type = "Square";
 	}
 
 	// TO-DO: Declare the draw() method
@@ -15,6 +15,6 @@ public class Square extends Shape {
 		 * Only print out the draw() method to test. No need to implement the real
 		 * drawing
 		 */
-
+		System.out.println("Inside Square::draw() method.");
 	}
 }

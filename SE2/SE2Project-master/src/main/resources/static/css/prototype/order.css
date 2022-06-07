@@ -1,0 +1,12 @@
+table, th, td {
+    border: 1px solid white;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+th, td {
+    font-size: 1.5rem;
+    line-height: 2;
+    padding-top: 1rem;
+    background-color: #96D4D4;
+}

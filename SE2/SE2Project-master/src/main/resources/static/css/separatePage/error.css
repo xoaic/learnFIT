@@ -1,0 +1,17 @@
+h1 {
+    font-size: xx-large;
+}
+
+p {
+    font-size: 1.5rem;
+}
+
+#error-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#error {
+    text-align: center;
+}

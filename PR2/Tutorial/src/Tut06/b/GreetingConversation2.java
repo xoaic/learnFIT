@@ -1,11 +1,8 @@
 package Tut06.b;
 
-import Tut06.a.MobilePhone;
-import Tut06.a.Person;
-
 import java.util.Scanner;
 
-public class GreetingConversation {
+public class GreetingConversation2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("How many people to input: ");
@@ -34,10 +31,11 @@ public class GreetingConversation {
             boolean guar = scanner.nextBoolean();
             scanner.nextLine();
 
-            Tut06.a.MobilePhone mp = new MobilePhone(mName, model, color, year, guar);
-            Tut06.a.Person ps = new Person(i, name, mp);
+            Tut06.b.MobilePhone mp = new MobilePhone(mName, model, color, year, guar);
+            Tut06.b.Person ps = new Person(i, name);
+            Tut06.b.PhoneOwnerShip pos = new PhoneOwnerShip(ps, mp);
 
-            System.out.println(ps.greet());
+            if (i == 1) System.out.println(ps.greet());
             System.out.println("-------------");
         }
         scanner.close();

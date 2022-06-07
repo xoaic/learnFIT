@@ -1,4 +1,4 @@
-package to_dos.abstract_factory;
+package Tut08.abstract_factory;
 
 /* Create ShapeFactory class extending AbstractFactory to generate 
  * object of concrete class based on given information. 
@@ -12,6 +12,7 @@ public class ShapeFactory extends AbstractFactory {
 		 * check for the shape type is equal to 'Rectangle' or 'Square' (ignore case)
 		 * then return the corresponding type
 		 */
-		return null;
+		if (shapeType.toLowerCase().equals("rectangle")) return new Rectangle();
+		else return new Square();
 	}
 }

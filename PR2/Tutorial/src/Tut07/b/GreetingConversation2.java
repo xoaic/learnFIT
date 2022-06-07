@@ -1,4 +1,4 @@
-package Tut06.b;
+package Tut07.b;
 
 import java.util.Scanner;
 
@@ -31,9 +31,9 @@ public class GreetingConversation2 {
             boolean guar = scanner.nextBoolean();
             scanner.nextLine();
 
-            Tut06.b.MobilePhone mp = new MobilePhone(mName, model, color, year, guar);
-            Tut06.b.Person ps = new Person(i, name);
-            Tut06.b.PhoneOwnerShip pos = new PhoneOwnerShip(ps, mp);
+            MobilePhone mp = new MobilePhone(mName, model, color, year, guar);
+            Person ps = new Person(i, name);
+            PhoneOwnerShip pos = new PhoneOwnerShip(ps, mp);
 
             if (i == 1) System.out.println(ps.greet());
             System.out.println("-------------");

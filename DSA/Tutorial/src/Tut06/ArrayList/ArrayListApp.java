@@ -4,7 +4,10 @@
  * @author (nxthang) 
  * @version (1.0)
  */
-package Tut06;
+package Tut06.ArrayList;
+
+import Tut06.ArrayList.ArrayList;
+
 public class ArrayListApp
 {
 

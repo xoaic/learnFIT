@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Store | The amazing electronic website</title>
+
+    <!-- css link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/prototype/main.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/prototype/header.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/prototype/footer.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/separatePage/homePage.css}">
+</head>
+<body>
+
+<!-- header section starts-->
+<header class="header">
+    <a th:href="@{/}" href="" class="logo"> <i class="fas fa-store"></i> Cloud Store </a>
+
+    <form action="" class="search-form">
+        <input type="search" id="search-box" placeholder="What are you looking for...">
+        <label for="search-box" class="fas fa-search"></label>
+    </form>
+
+    <div class="icons">
+        <div id="search-btn" class="fas fa-search"></div>
+        <a th:href="@{/cart}" class="fas fa-shopping-cart"></a>
+        <a th:href="@{/login}" class="fas fa-user"></a>
+    </div>
+</header>
+
+<!-- home section starts  -->
+<section class="home">
+    <div class="swiper home-slider">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide slide">
+                <div class="image">
+                    <img th:src="@{/images/banners/home-img-1.jpg}" alt="">
+                </div>
+
+                <div class="content">
+                    <span>upto 50% off</span>
+                    <h3>smartphones</h3>
+                    <a href="#" class="btn">shop now</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <div class="image">
+                    <img th:src="@{/images/banners/home-img-2.jpg}" alt="">
+                </div>
+
+                <div class="content">
+                    <span>upto 50% off</span>
+                    <h3>smartwatch</h3>
+                    <a href="#" class="btn">shop now</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <div class="image">
+                    <img th:src="@{/images/banners/home-img-3.jpg}" alt="">
+                </div>
+
+                <div class="content">
+                    <span>upto 50% off</span>
+                    <h3>headphones</h3>
+                    <a href="#" class="btn">shop now</a>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+</section>
+
+<!-- banner section starts  -->
+<section class="banner">
+    <div class="box-container">
+        <a href="#" class="box">
+            <img th:src="@{/images/banners/banner-1.jpg}" alt="">
+            <div class="content">
+                <span>Special offer</span>
+                <h3>upto 50% off</h3>
+            </div>
+        </a>
+
+        <a href="#" class="box">
+            <img th:src="@{/images/banners/banner-2.jpg}" alt="">
+            <div class="content">
+                <span>special offer</span>
+                <h3>upto 50% off</h3>
+            </div>
+        </a>
+
+        <a href="#" class="box">
+            <img th:src="@{/images/banners/banner-3.jpg}" alt="">
+            <div class="content">
+                <span>special offer</span>
+                <h3>upto 50% off</h3>
+            </div>
+        </a>
+    </div>
+</section>
+
+<!-- arrivals section starts  -->
+<section class="arrivals">
+    <h1 class="heading"> New <span>arrivals</span> </h1>
+    <div style="overflow-x: auto !important;">
+        <div class="box-container">
+            <div class="box" th:each="product : ${products}">
+                <div class="image">
+                    <img th:src="@{${product.getImagePath()}}" class="" th:alt="${product.name}">
+                    <div class="content">
+                        <h3 th:text="${product.name}"></h3>
+                        <div><span th:text="${product.price}"></span> </div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- faq section starts  -->
+<section class="faq">
+    <h1 class="heading"> Questions & <span>Answers</span> </h1>
+    <div class="accordion-container">
+        <div class="accordion">
+            <div class="accordion-heading">
+                <h3>How long is the product return time?</h3>
+                <i class="fas fa-angle-down"></i>
+            </div>
+
+            <p class="accordion-content">
+                You can experience for 7 days. Then, if there is any manufacturer defect, you can return it in 30 days.
+            </p>
+        </div>
+
+        <div class="accordion">
+            <div class="accordion-heading">
+                <h3>How to order online?</h3>
+                <i class="fas fa-angle-down"></i>
+            </div>
+
+            <p class="accordion-content">
+                First, choose the product you want to buy. Then go to cart and pay. We will ship the product to you within one day of placing the order.
+            </p>
+        </div>
+
+        <div class="accordion">
+            <div class="accordion-heading">
+                <h3>Can I cancel if I made a mistake??</h3>
+                <i class="fas fa-angle-down"></i>
+            </div>
+
+            <p class="accordion-content">
+                Yes. Please email support immediately. We will refund the full amount to you!
+            </p>
+        </div>
+
+        <div class="accordion">
+            <div class="accordion-heading">
+                <h3>Can I shop in Ca Mau?</h3>
+                <i class="fas fa-angle-down"></i>
+            </div>
+
+            <p class="accordion-content">
+                Sorry, we only have stores in Hanoi and Ho Chi Minh City.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- review section starts  -->
+<section class="review">
+    <h1 class="heading"> Clients <span>review</span> </h1>
+    <div class="swiper review-slider">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide slide">
+                <img th:src="@{/images/clients/pic-1.png}" alt="">
+                <h3>Tuan Do</h3>
+                <span>developer</span>
+                <p>I like it so much. Staffs serve very enthusiastically!</p>
+            </div>
+
+            <div class="swiper-slide slide">
+                <img th:src="@{/images/clients/pic-2.png}" alt="">
+                <h3>Huyen Trang</h3>
+                <span>designer</span>
+                <p>Great! I have bought at Cloud Store many times for the whole family.</p>
+            </div>
+
+            <div class="swiper-slide slide">
+                <img th:src="@{/images/clients/pic-3.png}" alt="">
+                <h3>Long Pham</h3>
+                <span>designer</span>
+                <p>Cloud Store is very reputable! I have been here many times.</p>
+            </div>
+
+            <div class="swiper-slide slide">
+                <img th:src="@{/images/clients/pic-4.png}" alt="">
+                <h3>Quynh Nhung</h3>
+                <span>singer</span>
+                <p>I just bought it for the first time, but I really want to come back</p>
+            </div>
+
+            <div class="swiper-slide slide">
+                <img th:src="@{/images/clients/pic-5.png}" alt="">
+                <h3>Duong Tung</h3>
+                <span>officer</span>
+                <p>Do not buy at Cloud Storage, life does not respect.</p>
+            </div>
+
+            <div class="swiper-slide slide">
+                <img th:src="@{/images/clients/pic-6.png}" alt="">
+                <h3>Thao Nhi</h3>
+                <span>writer</span>
+                <p>I really like the services and experience at Cloud Store.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- newsletter section starts  -->
+<section class="newsletter">
+    <div class="content">
+        <h3>Newsletter</h3>
+        <p>Subscribe for weelky newsletter!</p>
+    </div>
+
+    <form action="">
+        <input type="email" name="" placeholder="Enter your email..." id="" class="email">
+        <input type="submit" value="subscribe" class="btn">
+    </form>
+</section>
+
+<!-- footer section starts  -->
+<section class="quick-links">
+    <a th:href="@{/}" class="logo"> <i class="fas fa-store"></i> Cloud Store </a>
+
+    <div class="links">
+        <a th:href="@{/}"> <i class="fas fa-angle-right"></i> Home </a>
+        <a th:href="@{/shop}"> <i class="fas fa-angle-right"></i> Shop </a>
+        <a th:href="@{/staff}"> <i class="fas fa-angle-right"></i> Staff </a>
+        <a th:href="@{/contact}"> <i class="fas fa-angle-right"></i> Contact </a>
+    </div>
+
+    <div class="share">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fab fa-linkedin"></a>
+    </div>
+</section>
+
+<section class="credit">
+    <p>Copyright @ 2021 by <span>Cloud Store</span> | All Rights reserved.</p>
+    <img th:src="@{/images/card_img.png}" alt="Cart image">
+</section>
+
+<!-- js link -->
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<script th:src="@{/js/base/search.js}"></script>
+<script th:src="@{/js/base/swiper.js}"></script>
+<script th:src="@{/js/base/accordion.js}"></script>
+</body>
+</html>

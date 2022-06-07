@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | Cloud Store</title>
+
+    <!-- css link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/prototype/main.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/prototype/header.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/prototype/dashboard.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/separatePage/profileUpdate.css}">
+</head>
+<body>
+
+<!-- header section starts  -->
+<header class="header">
+    <a th:href="@{/}" href="" class="logo"> <i class="fas fa-store"></i> Cloud Store </a>
+
+    <form action="" class="search-form">
+        <input type="search" id="search-box" placeholder="What are you looking for...">
+        <label for="search-box" class="fas fa-search"></label>
+    </form>
+
+    <div class="icons">
+        <div id="search-btn" class="fas fa-search"></div>
+        <a th:href="@{/cart}" class="fas fa-shopping-cart"></a>
+        <a th:href="@{/login}" class="fas fa-user"></a>
+    </div>
+</header>
+
+<!-- profile starts  -->
+<div class="dashboard-container">
+    <ul class="menu">
+        <li><a th:href="@{/user}"> Dashboard </a></li>
+        <li class="active"><a th:href="@{/updateProfile}"> My Profile </a></li>
+        <li><a th:href="@{/order}"> My Order </a></li>
+    </ul>
+
+    <div class="grid">
+        <div></div>
+
+        <div class="information grid-col">
+            <h1 class="heading"> My <span>profile</span> </h1>
+            <section class="section-container">
+                <form action="">
+                    <input type="text" name="" placeholder="Do Minh Vuong" id="name-info" class="box">
+                    <input type="email" name="" placeholder="Xoaichuacola@gmail.com" id="email-info" class="box">
+                    <input type="text" name="" placeholder="0383398867" id="phone-info" class="box">
+                    <input type="text" name="" placeholder="Thanh Lam, Me Linh, Ha Noi" id="address-info" class="box">
+                    <input type="submit" value="Update profile" class="btn">
+                </form>
+            </section>
+
+            <h1 class="heading"> Update <span>password</span> </h1>
+            <section class="section-container">
+                <form action="">
+                    <input type="password" name="" placeholder="Enter your password" id="pass-info" class="box">
+                    <input type="password" name="" placeholder="Re-enter your password" id="repass-info" class="box">
+                    <input type="submit" value="Update password" class="btn">
+                </form>
+            </section>
+        </div>
+
+        <div class="profile gid-col">
+            <img th:src="@{/images/users/user-1.jpg}" alt="">
+            <p></p>
+            <a href="#" class="btn">Change image</a>
+        </div>
+    </div>
+</div>
+
+<!-- js link -->
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<script th:src="@{/js/base/search.js}"></script>
+</body>
+</html>

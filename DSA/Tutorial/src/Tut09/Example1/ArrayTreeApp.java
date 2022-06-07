@@ -1,4 +1,4 @@
-package Example1;
+package Tut09.Example1;
 
 /**
  * Class ArrayTreeApp demonstrates an example about how to use ArrayTree class.

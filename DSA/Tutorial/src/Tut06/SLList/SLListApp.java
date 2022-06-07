@@ -5,7 +5,8 @@
  * @author (nxthang) 
  * @version (1.0)
  */
-package Tut06;
+package Tut06.SLList;
+
 public class SLListApp
 {
     /**

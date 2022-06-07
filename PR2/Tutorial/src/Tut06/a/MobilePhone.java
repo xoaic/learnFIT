@@ -1,4 +1,4 @@
-package Tut06;
+package Tut06.a;
 
 public class MobilePhone {
     public void recordName(String manName) {

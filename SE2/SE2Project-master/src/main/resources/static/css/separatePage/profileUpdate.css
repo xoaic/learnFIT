@@ -1,0 +1,18 @@
+form .box {
+    width: 100%;
+    padding: 1.2rem 1.4rem;
+    border-radius: .5rem;
+    border: 0.2rem solid #333;
+    font-size: 1.6rem;
+    color: #666;
+    text-transform: none;
+    margin: .7rem 0;
+}
+
+form p {
+    padding-top: 2rem;
+    font-size: 1.5rem;
+    color: #666;
+    text-align: center;
+    padding-bottom: 1rem;
+}

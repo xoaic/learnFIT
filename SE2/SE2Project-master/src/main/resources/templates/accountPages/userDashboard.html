@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard | Cloud Store</title>
+
+    <!-- css link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/prototype/main.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/prototype/header.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/prototype/dashboard.css}">
+</head>
+<body>
+
+<!-- header section starts  -->
+<header class="header">
+    <a th:href="@{/}" href="" class="logo"> <i class="fas fa-store"></i> Cloud Store </a>
+
+    <form action="" class="search-form">
+        <input type="search" id="search-box" placeholder="What are you looking for...">
+        <label for="search-box" class="fas fa-search"></label>
+    </form>
+
+    <div class="icons">
+        <div id="search-btn" class="fas fa-search"></div>
+        <a th:href="@{/cart}" class="fas fa-shopping-cart"></a>
+        <a th:href="@{/login}" class="fas fa-user"></a>
+    </div>
+</header>
+
+<!-- dashboard starts  -->
+<div class="dashboard-container">
+    <ul class="menu">
+        <li class="active"><a th:href="@{/user}"> Dashboard </a></li>
+        <li><a th:href="@{/updateProfile}"> My Profile </a></li>
+        <li><a th:href="@{/order}"> My Order </a></li>
+    </ul>
+
+    <div class="grid">
+        <div></div>
+
+        <div class="statistics grid-col">
+            <h1 class="heading"> My <span>dashboard</span> </h1>
+            <section class="section-container">
+                <p>Welcome to Cloud Store. Here is where you can manage your info and orders.</p>
+            </section>
+        </div>
+
+        <div class="profile gid-col">
+            <img th:src="@{/images/users/user-1.jpg}" alt="">
+            <p>
+                Name: Do Minh Vuong<br>
+                Email: Minhvuong250101@gmail.com<br>
+                Phone: 0383398867<br>
+                Address: Thanh Lam, Me Linh, Ha Noi
+            </p>
+            <a th:href="@{/updateProfile}" class="btn">Update profile</a>
+        </div>
+    </div>
+</div>
+
+<!-- js link -->
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<script th:src="@{/js/base/search.js}"></script>
+</body>
+</html>

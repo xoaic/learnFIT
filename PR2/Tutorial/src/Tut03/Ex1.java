@@ -3,11 +3,11 @@ package Tut03;
 import com.github.javaparser.JavaParser;
 import com.github.javaparser.ast.CompilationUnit;
 
-public class Exe1 {
+public class Ex1 {
     public static void main(String[] args) {
         // program text
         String progText = "class Hello { "
-                + "public static void main(String[] args) { "
+                + "public static void (String[] args) { "
                 + " System.out.println(\"Hello world!\"); "
                 + "} "
                 + "}";

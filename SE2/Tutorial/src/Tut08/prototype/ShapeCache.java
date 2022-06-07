@@ -1,4 +1,4 @@
-package to_dos.prototype;
+package Tut08.prototype;
 
 import java.util.Hashtable;
 
@@ -19,6 +19,16 @@ public class ShapeCache {
 	 * create shape shapeMap.put(shapeKey, shape);
 	 */
 	public static void loadCache() {
+		Circle cc = new Circle();
+		cc.setId("s1");
+		shapeMap.put(cc.getId(), cc);
 
+		Square sq = new Square();
+		sq.setId("s2");
+		shapeMap.put(sq.getId(), sq);
+
+		Rectangle re = new Rectangle();
+		re.setId("s3");
+		shapeMap.put(re.getId(), re);
 	}
 }

@@ -1,10 +1,6 @@
-package Tut07.a;
+package Tut08.a;
 
-import utils.AttrRef;
-import utils.DOpt;
-import utils.DomainConstraint;
-import utils.NotPossibleException;
-import utils.OptType;
+import utils.*;
 
 /**
  * @overview A person have relationships.
@@ -31,35 +27,50 @@ public class Person {
     private MobilePhone phone;
 
     // BEHAVIOR SPACE
-    public Person (@AttrRef("id") int id, @AttrRef("name") String name, MobilePhone phone) throws NotPossibleException {
+    /**
+     * @effects
+     *   if id, name are valid
+     *      initialise this as <id, name, phone>
+     *   else
+     *      throws NotPossibleException
+     */
+    public Person(@AttrRef("id") int id, @AttrRef("name") String name, MobilePhone phone) throws NotPossibleException {
         this.id = id;
         this.name = name;
         this.phone = phone;
+        if (!repOK())
+            throw new NotPossibleException("invalid input!");
     }
 
+
+
     /**
-    * @effects
-    * if name is valid
-    * set this.name to name
-    * return true
-    * else
-    * return false
-    */
+     * @effects
+     * if name is valid
+     * set this.name to name
+     * return true
+     * else
+     * return false
+     */
     @DOpt(type=OptType.Mutator) @AttrRef("name")
     public void setName(String name) {
         this.name = name;
     }
 
     /**
-    * @effects return greet message
-    */
+     * @effects return greeting message
+     */
     public String greet() {
-        return "Hello, " + this.name + "! Your info is in our system.";
+        return "Hello, " + name + "! Your info is in our system.";
     }
 
     @Override
     public String toString() {
-        return "";
+        return "Person{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", phone=" + phone +
+                '}';
     }
 
     @Override
@@ -68,13 +79,38 @@ public class Person {
     }
 
     /**
-    * @effects
-    * if this satisfies abstract properties
-    * return true
-    * else
-    * return false
-    */
-    public boolean repOK() {
+     * @effects
+     *   if id > 0
+     *      return true
+     *   else
+     *      return false
+     */
+    public boolean validateId(int id) {
+        return id > 0;
+    }
+
+    /**
+     * @effects
+     *   if name contains an invalid character
+     *      return false
+     *   else
+     *      return true
+     */
+    public boolean validateName(String name) {
+        for (char c : name.toLowerCase().toCharArray()) {
+            if (((int)c < 97 || (int)c > 122)) return false;
+        }
         return true;
+    }
+
+    /**
+     * @effects
+     *   if id, name are valid
+     *      return true
+     *   else
+     *      return false
+     */
+    public boolean repOK() {
+        return validateId(id) && validateName(name);
     }
 }

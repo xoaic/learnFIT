@@ -1,4 +1,4 @@
-package a1_1901040247.utils;
+package utils;
 
 
 import java.io.BufferedReader;

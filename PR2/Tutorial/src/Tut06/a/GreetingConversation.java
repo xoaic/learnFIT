@@ -1,4 +1,4 @@
-package Tut06;
+package Tut06.a;
 
 import java.util.Scanner;
 
@@ -34,7 +34,7 @@ public class GreetingConversation {
             MobilePhone mp = new MobilePhone(mName, model, color, year, guar);
             Person ps = new Person(i, name, mp);
 
-            System.out.println(ps.greet());
+            if (i == 1) System.out.println(ps.greet());
             System.out.println("-------------");
         }
         scanner.close();

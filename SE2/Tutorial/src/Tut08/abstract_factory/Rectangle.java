@@ -1,4 +1,4 @@
-package to_dos.abstract_factory;
+package Tut08.abstract_factory;
 
 // Create the Rectangle concrete class implementing the Shape interface.
 public class Rectangle implements Shape {

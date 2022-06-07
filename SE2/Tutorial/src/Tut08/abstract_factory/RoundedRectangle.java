@@ -1,4 +1,4 @@
-package to_dos.abstract_factory;
+package Tut08.abstract_factory;
 
 //Create the RoundedRectangle concrete class implementing the Shape interface.
 public class RoundedRectangle implements Shape {

@@ -1,0 +1,52 @@
+.product-banner .box-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.product-banner .box-container .box {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 42rem;
+    flex: 1 1 42rem;
+    position: relative;
+    -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    border-radius: .5rem;
+    border: 0.2rem solid #333;
+    overflow: hidden;
+    height: 30rem;
+}
+
+.product-banner .box-container .box:hover img {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.product-banner .box-container .box img {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.product-banner .box-container .box .content {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.product-banner .box-container .box .content span {
+    font-size: 1.7rem;
+    color: #0984e3;
+}
+
+.product-banner .box-container .box .content h3 {
+    padding-top: .5rem;
+    font-size: 2rem;
+    color: #333;
+}

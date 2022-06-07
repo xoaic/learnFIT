@@ -1,4 +1,4 @@
-package Tut08.a;
+package Tut09.a;
 
 import utils.AttrRef;
 import utils.DOpt;
@@ -54,6 +54,20 @@ public class MobilePhone {
         this.color = color;
         this.year = year;
         this.guaranteed = guaranteed;
+        if (!repOK())
+            throw new NotPossibleException("invalid input!");
+    }
+
+    /**
+     * @effects
+     *   if manName, model are valid
+     *      initialise this as <n,m,c,y,g>
+     *   else
+     *      throws NotPossibleException
+     */
+    public MobilePhone(@AttrRef("manName")String manName, @AttrRef("model")String model) throws NotPossibleException {
+        this.manName = manName;
+        this.model = model;
         if (!repOK())
             throw new NotPossibleException("invalid input!");
     }

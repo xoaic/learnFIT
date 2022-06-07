@@ -7,5 +7,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="javaparser-core-3.0.1" level="project" />
+    <orderEntry type="library" name="t3-utils" level="project" />
   </component>
 </module>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Page | Cloud Store</title>
+
+    <!-- css link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/prototype/main.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/prototype/header.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/prototype/footer.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/separatePage/homePage.css}">
+</head>
+<body>
+
+<!-- header section starts  -->
+<header class="header">
+    <a th:href="@{/}" href="" class="logo"> <i class="fas fa-store"></i> Cloud Store </a>
+
+    <form action="" class="search-form">
+        <input type="search" id="search-box" placeholder="What are you looking for...">
+        <label for="search-box" class="fas fa-search"></label>
+    </form>
+
+    <div class="icons">
+        <div id="search-btn" class="fas fa-search"></div>
+        <a th:href="@{/cart}" class="fas fa-shopping-cart"></a>
+        <a th:href="@{/login}" class="fas fa-user"></a>
+    </div>
+</header>
+
+<!-- staff section starts  -->
+<section class="review">
+    <h1 class="heading"> Our <span>staff</span> </h1>
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide slide">
+                <img th:src="@{/images/staffs/staff-1.jpg}" alt="">
+                <h3>Tam Ha</h3>
+                <span>backend</span>
+                <p>He who was born in 2000, is the leader of the team.</p>
+            </div>
+
+            <div class="swiper-slide slide">
+                <img th:src="@{/images/staffs/staff-2.jpg}" alt="">
+                <h3>Hai Ninh</h3>
+                <span>backend</span>
+                <p>He was born in 2001. A person with qualities.</p>
+            </div>
+
+            <div class="swiper-slide slide">
+                <img th:src="@{/images/staffs/staff-3.jpg}" alt="">
+                <h3>Nguyen Tan</h3>
+                <span>frontend</span>
+                <p>He was born in 2001. A person full of wisdom.</p>
+            </div>
+        </div>
+
+        <div class="swiper-wrapper">
+            <div class="swiper-slide slide">
+                <img th:src="@{/images/staffs/staff-4.jpg}" alt="">
+                <h3>Hoang Viet</h3>
+                <span>writer</span>
+                <p>He was born in 2001. A person full of courage.</p>
+            </div>
+
+            <div class="swiper-slide slide">
+                <img th:src="@{/images/staffs/staff-5.jpg}" alt="">
+                <h3>Minh Vuong</h3>
+                <span>frontend</span>
+                <p>He was born in 2001. A person full of enthusiasm.</p>
+            </div>
+
+            <div class="swiper-slide slide">
+                <img th:src="@{/images/staffs/staff-6.jpg}" alt="">
+                <h3>Trung Hieu</h3>
+                <span>writer</span>
+                <p>He was born in 2001. A trustworthy person.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- footer section starts  -->
+<section class="quick-links">
+    <a th:href="@{/}" class="logo"> <i class="fas fa-store"></i> Cloud Store </a>
+
+    <div class="links">
+        <a th:href="@{/}"> <i class="fas fa-angle-right"></i> Home </a>
+        <a th:href="@{/shop}"> <i class="fas fa-angle-right"></i> Shop </a>
+        <a th:href="@{/staff}"> <i class="fas fa-angle-right"></i> Staff </a>
+        <a th:href="@{/contact}"> <i class="fas fa-angle-right"></i> Contact </a>
+    </div>
+
+    <div class="share">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fab fa-linkedin"></a>
+    </div>
+</section>
+
+<section class="credit">
+    <p>Copyright @ 2021 by <span>Cloud Store</span> | All Rights reserved.</p>
+    <img th:src="@{/images/card_img.png}" alt="Cart image">
+</section>
+
+<!-- js link -->
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<script th:src="@{/js/base/search.js}"></script>
+</body>
+</html>

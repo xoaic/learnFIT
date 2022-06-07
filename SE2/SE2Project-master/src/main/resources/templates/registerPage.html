@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page | Cloud Store</title>
+
+    <!-- css link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/prototype/main.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/prototype/header.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/prototype/footer.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/prototype/form.css}">
+
+    <link rel="stylesheet" th:href="@{/css/prototype/register.css}">
+</head>
+<body>
+
+<!-- header section starts  -->
+<header class="header">
+    <a th:href="@{/}" href="" class="logo"> <i class="fas fa-store"></i> Cloud Store </a>
+
+    <form action="" class="search-form">
+        <input type="search" id="search-box" placeholder="What are you looking for...">
+        <label for="search-box" class="fas fa-search"></label>
+    </form>
+
+    <div class="icons">
+        <div id="search-btn" class="fas fa-search"></div>
+        <a th:href="@{/cart}" class="fas fa-shopping-cart"></a>
+        <a th:href="@{/login}" class="fas fa-user"></a>
+    </div>
+</header>
+
+<!-- register form section starts  -->
+<section class="register">
+    <h3>Register now</h3>
+    <form class="register-form" id="register-form" th:action="@{/register}" th:object="${registerRequestDto}" method="POST">
+        <input type="text" name="firstName" placeholder="Enter your first name" id="firstName" th:field = "*{firstName}" class="box">
+        <div class="err-msg">
+            <span class="firstName-msg" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span>
+        </div>
+
+        <input type="text" name="lastName" placeholder="Enter your last name" id="lastName" th:field = "*{lastName}" class="box">
+        <div class="err-msg">
+            <span class="firstName-msg" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span>
+        </div>
+
+        <input type="text" name="phoneNumber" placeholder="Enter your phone number" id="phoneNumber" th:field = "*{phoneNumber}" class="box">
+        <div class="err-msg">
+            <span class="firstName-msg" th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"></span>
+        </div>
+
+        <input type="text" name="address" placeholder="Enter your address" id="address" th:field = "*{address}" class="box">
+        <div class="err-msg">
+            <span class="firstName-msg" th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></span>
+        </div>
+
+        <input type="email" name="email" placeholder="Enter your email" id="email" class="box">
+        <div class="err-msg">
+            <span class="email-msg" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+        </div>
+
+        <input type="password" name="password" placeholder="Re-Enter your password" id="password" class="box">
+        <div class="err-msg">
+            <span class="password-msg" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+        </div>
+
+
+        <input type="password" name="rePassword" placeholder="Re-enter your password" id="rePassword" class="box">
+        <div class="err-msg">
+            <span class="re-password-msg"></span>
+        </div>
+
+        <input type="submit" value="register now" class="btn">
+        <p>Already have an account?</p>
+        <a th:href="@{/login}" class="btn link">Login now</a>
+    </form>
+</section>
+
+<!-- footer section starts  -->
+<section class="quick-links">
+    <a th:href="@{/}" class="logo"> <i class="fas fa-store"></i> Cloud Store </a>
+
+    <div class="links">
+        <a th:href="@{/}"> <i class="fas fa-angle-right"></i> Home </a>
+        <a th:href="@{/shop}"> <i class="fas fa-angle-right"></i> Shop </a>
+        <a th:href="@{/staff}"> <i class="fas fa-angle-right"></i> Staff </a>
+        <a th:href="@{/contact}"> <i class="fas fa-angle-right"></i> Contact </a>
+    </div>
+
+    <div class="share">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fab fa-linkedin"></a>
+    </div>
+</section>
+
+<section class="credit">
+    <p>Copyright @ 2021 by <span>Cloud Store</span> | All Rights reserved.</p>
+    <img th:src="@{/images/card_img.png}" alt="Cart image">
+</section>
+
+<!-- js link -->
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+<script th:src="@{/js/account/register.js}"></script>
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<script th:src="@{/js/base/search.js}"></script>
+</body>
+</html>

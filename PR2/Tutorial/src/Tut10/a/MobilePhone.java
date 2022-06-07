@@ -1,4 +1,4 @@
-package Tut09.a;
+package Tut10.a;
 
 import utils.AttrRef;
 import utils.DOpt;
@@ -34,6 +34,9 @@ public class MobilePhone {
     @DomainConstraint(type="Character", mutable=true, optional=false)
     private char color;
 
+    @DomainConstraint(type="String", mutable=true, optional=false)
+    private String colorCode;
+
     @DomainConstraint(type="Integer", mutable=true, optional=false, min=1975)
     private int year;
 
@@ -54,6 +57,7 @@ public class MobilePhone {
         this.color = color;
         this.year = year;
         this.guaranteed = guaranteed;
+        setColorCode(color);
         if (!repOK())
             throw new NotPossibleException("invalid input!");
     }
@@ -95,8 +99,26 @@ public class MobilePhone {
     @DOpt(type=OptType.Mutator) @AttrRef("model")
     public void setModel(String model) {
         if (validateModel(model)) this.model = model;
-        else
-            throw new NotPossibleException("invalid model!");
+        else throw new NotPossibleException("invalid model!");
+    }
+
+    /**
+     * @effects
+     *   if color is valid
+     *      set color to this.colorCode
+     *   else
+     *      throws NotPossibleException
+     */
+    @DOpt(type=OptType.Mutator) @AttrRef("colorCode")
+    public void setColorCode(char color) {
+        switch (color) {
+            case 'W' -> this.colorCode = "#FFFFFF";
+            case 'B' -> this.colorCode = "#0000FF";
+            case 'R' -> this.colorCode = "#FF0000";
+            case 'G' -> this.colorCode = "#00FF00";
+            case 'Y' -> this.colorCode = "#FFFF00";
+            default -> throw new NotPossibleException("invalid color!");
+        }
     }
 
     @Override
@@ -105,6 +127,7 @@ public class MobilePhone {
                 "manName='" + manName + '\'' +
                 ", model='" + model + '\'' +
                 ", color=" + color +
+                ", colorCode=" + colorCode +
                 ", year=" + year +
                 ", guaranteed=" + guaranteed +
                 '}';
@@ -138,9 +161,11 @@ public class MobilePhone {
      */
     public boolean validateModel(String model) {
         for (char c : model.toLowerCase().toCharArray()) {
-            if ((int)c > 122) return false;
-            if (((int)c < 97) && ((int)c > 57)) return false;
-            if ((int)c < 48) return false;
+            if ((int)c != 32) {
+                if ((int) c > 122) return false;
+                if (((int) c < 97) && ((int) c > 57)) return false;
+                if ((int) c < 48) return false;
+            }
         }
         return true;
     }

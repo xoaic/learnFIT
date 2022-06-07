@@ -1,4 +1,4 @@
-package Example1;
+package Tut09.Example1;
 
 /**
  * Class ArrayTree implements Tree data structure using arrays. 
@@ -38,7 +38,10 @@ public class ArrayTree
     {
         return (n==0);
     }
-    
+
+    public boolean isLeaf(int node) {
+        return leftMostChild(node) == -1;
+    }
 
     public void addNode(String label, int parent)
     {
@@ -78,6 +81,14 @@ public class ArrayTree
         return p[node];
     }
     
+    public int getDegree(int node) {
+        int deg = 0;
+        for (int i = node; i < n; i++) {
+            if (p[i] == node) deg++;
+        }
+        return deg;
+    }
+
     public String getNodeLabel(int node)
     {
         if (node != -1)
@@ -86,9 +97,33 @@ public class ArrayTree
             return null;
     }
 
+    public int getLevel(int node) {
+        int level = 0;
+        int pNode = node;
+        if (pNode != 0) {
+            do {
+                pNode = getParent(pNode);
+                level++;
+            } while (pNode != 0);
+        }
+        return level;
+    }
+
+    public int getDepth() {
+        return getLevel(n);
+    }
+
     public void setNodeLabel(int node, String label)
     {
         l[node]=label;
+    }
+
+    public int countLeaves() {
+        int count = 0;
+        for (int i = 0; i < n; i++) {
+            if (isLeaf(i)) count++;
+        }
+        return count;
     }
 
     public int leftMostChild(int node)
@@ -113,12 +148,20 @@ public class ArrayTree
         else    
             return -1;
     }
+
+    public int search(String label) {
+        for (int i = 0; i < n; i++) {
+            if (l[i].equals(label)) return i;
+        }
+        return -1;
+    }
+
     public void printTree()
     {
     	System.out.println("Tree currently: ");
     	for (int i=0;i<n;i++)
     	{
-    		System.out.print(l[i]+" ");		
+    		System.out.print(" "+l[i]);
     	}
     	System.out.println();
     	for (int i=0;i<n;i++)
@@ -127,5 +170,4 @@ public class ArrayTree
     	}
     	System.out.println();
     }
-
 }

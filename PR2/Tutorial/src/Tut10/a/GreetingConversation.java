@@ -1,14 +1,29 @@
-package Tut09.a;
+package Tut10.a;
 
 public class GreetingConversation {
+    public MobilePhone mp;
+    public Person ps;
+
+    private static final GreetingConversation greetingConversation = new GreetingConversation();
+
+    private GreetingConversation() {}
+
+    public static GreetingConversation getInstance() {
+        return greetingConversation;
+    }
+
     public static void main(String[] args) {
-        MobilePhone phone1 = new MobilePhone("Apple", "Iphone12", 'R', 2021, true);
-        System.out.println(phone1.toString());
+        GreetingConversation gcs1 = GreetingConversation.getInstance();
+        GreetingConversation gcs2 = GreetingConversation.getInstance();
+        GreetingConversation gcs3 = GreetingConversation.getInstance();
 
-        Person person = new Person(1, "Vuong", phone1);
-        System.out.println(person.toString());
+        gcs1.mp = new MobilePhone("Apple", "Iphone 12 Pro MAX", 'W', 2021, true);
+        System.out.println(gcs1.mp.toString());
 
-        MobilePhone phone2 = new MobilePhone("Apple", "Iphone12");
-        System.out.println(phone2.toString());
+        gcs2.ps = new Person(1, "Vuong", gcs1.mp);
+        System.out.println(gcs2.ps.toString());
+
+        gcs3.mp = new MobilePhone("Samsung", "Galaxy Note 20 Ultra");
+        System.out.println(gcs3.mp.toString());
     }
 }

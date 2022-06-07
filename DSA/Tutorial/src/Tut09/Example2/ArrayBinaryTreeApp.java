@@ -1,4 +1,4 @@
-package Example2;
+package Tut09.Example2;
 /**
  * Class ArrayBinaryTreeApp demonstrates an example about how to use ArrayBinaryTree class.
  * @author (nxthang) 

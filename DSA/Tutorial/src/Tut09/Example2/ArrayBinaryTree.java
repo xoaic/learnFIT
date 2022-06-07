@@ -1,4 +1,4 @@
-package Example2;
+package Tut09.Example2;
 
 /**
  * Class ArrayBinaryTree implements Binary Tree data structure using an array. 
@@ -8,7 +8,10 @@ package Example2;
  * @author (nxthang) 
  * @version (1.0)
  */
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
+
 public class ArrayBinaryTree
 {
     private static final int maxSize=100; //Maximum possible number of nodes in the tree
@@ -64,7 +67,6 @@ public class ArrayBinaryTree
 
     public void addRightChild(String label, int node)
     {
-    	
         setNodeLabel(label,getRightChild(node));
     }
     
@@ -81,5 +83,57 @@ public class ArrayBinaryTree
     public boolean isEmpty()
     {
         return (l[0]==null);
+    }
+
+    public boolean isLeaf(int node) {
+        return getLeftChild(node) > maxSize;
+    }
+
+    public int countLeaves() {
+        int count = 0;
+        for (int i = 1; i < maxSize; i++) {
+            if (isLeaf(i)) count++;
+        }
+        return count;
+    }
+
+    public int getLevel(int node) {
+        int level = 0;
+        int pNode = node;
+        if (pNode != 0) {
+            do {
+                pNode = getParent(pNode);
+                level++;
+            } while (pNode != 0);
+        }
+        return level;
+    }
+
+    public int getDepth() {
+        for (int i = maxSize; i > 0; i--) {
+            if (l[i] != null) return getLevel(maxSize);
+        }
+        return -1;
+    }
+
+    public void inOrderTravel(int node) {
+        HashSet<String> traversal = new HashSet<>();
+        for (int i = node; i < maxSize; i++) {
+            if (l[i] != null) traversal.add(l[i]);
+        }
+    }
+
+    public void postOrderTravel(int node) {
+        HashSet<String> traversal = new HashSet<>();
+        for (int i = maxSize; i > node; i--) {
+            if (l[i] != null) traversal.add(l[i]);
+        }
+    }
+
+    public int search(String label) {
+        for (int i = 0; i < maxSize; i++) {
+            if (l[i].equals(label)) return i;
+        }
+        return -1;
     }
 }

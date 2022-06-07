@@ -1,39 +1,54 @@
 package Tut04;
 
+import java.util.HashMap;
 import java.util.Scanner;
 
-public class Exe3 {
+public class Exe2 {
     public static void main(String[] args) {
+        // Input
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Enter the nums of list: ");
+        System.out.print("Enter the nums of students: ");
         int n = scanner.nextInt();
         scanner.nextLine();
 
-        int[] A = new int[n];
-        int[] B = new int[n];
+        HashMap<Integer, String> stds = new HashMap<>();
+        int[] marks = new int[n];
 
         for (int i = 0; i < n; i++) {
-            System.out.print("Enter the integer " + (i+1) + ": ");
-            A[i] = scanner.nextInt();
+            System.out.print("Enter the name of student " + (i+1) + ": ");
+            String name = scanner.nextLine();
+
+            System.out.print("Enter the mark of student " + (i+1) + ": ");
+            marks[i] = scanner.nextInt();
+            scanner.nextLine();
+
+            stds.put(marks[i], name);
         }
+
+        System.out.print("Enter the max students to find: ");
+        int m = scanner.nextInt();
 
         scanner.close();
+        // End Input
 
-        int x = 0, y = n-1;
+        // Algorithm + Output
+        System.out.print("The " + m + " students who has highest max is: ");
 
-        for (int i = 0; i < n; i++) {
-            if (A[i] < 0) {
-                B[x++] = A[i];
-            } else if (A[i] > 0) {
-                B[y--] = A[i];
+        for (int i = 0; i < m; i++) {
+            int max = marks[0], p = 1;
+
+            for (int j = 1; j < n; j++) {
+                if (marks[j] > max) {
+                    max = marks[j];
+                    p = j;
+                }
             }
-        }
 
-        System.out.print("The re-arrange is: ");
+            marks[p] = 0;
 
-        for (int i = 0; i < n; i++) {
-            System.out.print(B[i] + " ");
+            System.out.print(stds.get(max) + " ");
         }
+        // End Algorithm + Output
     }
 }

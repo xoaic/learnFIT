@@ -5,7 +5,7 @@
  * @author (nxthang) 
  * @version (1.0)
  */
-package Example1;
+package Tut08;
 public class ArrayStack
 {
     private int[] items;

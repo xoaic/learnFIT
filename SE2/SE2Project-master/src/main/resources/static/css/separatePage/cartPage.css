@@ -1,0 +1,113 @@
+.shopping-cart .box-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: minmax(31rem, 1fr);[auto-fit];
+    grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
+    gap: 2rem;
+}
+
+.shopping-cart .box-container .box {
+    padding: 2rem;
+    border: 0.2rem solid #333;
+    background: #fff;
+    border-radius: .5rem;
+    -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: .5rem;
+    position: relative;
+}
+
+.shopping-cart .box-container .box .fa-times {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2.5rem;
+    color: #666;
+    cursor: pointer;
+}
+
+.shopping-cart .box-container .box .fa-times:hover {
+    color: #333;
+}
+
+.shopping-cart .box-container .box img {
+    height: 12rem;
+}
+
+.shopping-cart .box-container .box .content h3 {
+    font-size: 1.7rem;
+    color: #333;
+}
+
+.shopping-cart .box-container .box .content form {
+    padding: 1rem 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: .5rem;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.shopping-cart .box-container .box .content form span {
+    font-size: 1.5rem;
+    color: #666;
+}
+
+.shopping-cart .box-container .box .content form input {
+    width: 7rem;
+    padding: .5rem 1rem;
+    color: #666;
+    border-radius: .5rem;
+    background: #eee;
+    font-size: 1.5rem;
+}
+
+.shopping-cart .box-container .box .content .price {
+    font-size: 2rem;
+    color: #0984e3;
+}
+
+.shopping-cart .box-container .box .content .price span {
+    font-size: 1.5rem;
+    color: #666;
+    text-decoration: line-through;
+}
+
+.shopping-cart .cart-total {
+    margin-top: 2rem;
+    -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    border: 0.2rem solid #333;
+    border-radius: .5rem;
+    background: #fff;
+    padding: 2rem;
+    padding-top: 1rem;
+}
+
+.shopping-cart .cart-total h3 {
+    padding-top: 1rem;
+    font-size: 2rem;
+    color: #333;
+}
+
+.shopping-cart .cart-total h3 span {
+    color: #0984e3;
+}
+
+@media (max-width: 450px) {
+    .shopping-cart .cart-total {
+        text-align: center;
+    }
+
+    .shopping-cart .cart-total .btn {
+        width: 100%;
+    }
+}

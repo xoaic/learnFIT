@@ -1,0 +1,5 @@
+.grid {
+    display: grid;
+    grid-template-columns: calc(50% - (30px * 1/2)) calc(50% - (30px * 1/2));
+    grid-column-gap: 30px;
+}

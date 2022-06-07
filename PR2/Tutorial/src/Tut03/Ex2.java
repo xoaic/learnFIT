@@ -2,15 +2,12 @@ package Tut03;
 
 import com.github.javaparser.JavaParser;
 import com.github.javaparser.ast.CompilationUnit;
+import exer.chap03.TextIOPlus;
 
-public class Ex1 {
+public class Ex2 {
     public static void main(String[] args) {
         // program text
-        String progText = "class Hello { "
-                + "public static void (String[] args) { "
-                + " System.out.println(\"Hello world!\"); "
-                + "} "
-                + "}";
+        String progText = TextIOPlus.readTextFileContent(Ex2.class,"Hello.j");
 
         // parse the program text
         CompilationUnit codeUnit = JavaParser.parse(progText);

@@ -1,4 +1,6 @@
-package Tut06;
+package Tut06.a;
+
+import Tut06.a.MobilePhone;
 
 public class Person {
     public void setName(String name) {

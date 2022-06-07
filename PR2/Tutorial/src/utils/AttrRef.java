@@ -1,4 +1,4 @@
-package a1_1901040247.utils;
+package utils;
 
 import static java.lang.annotation.ElementType.CONSTRUCTOR;
 import static java.lang.annotation.ElementType.FIELD;
