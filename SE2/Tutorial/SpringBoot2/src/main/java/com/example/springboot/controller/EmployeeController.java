@@ -39,7 +39,7 @@ public class EmployeeController {
         return "employeeAdd";
     }
 
-    @RequestMapping (value = "/update/{id}")
+    @RequestMapping(value = "/update/{id}")
     public String updateEmployee(@PathVariable (value = "id") Long id, Model model)  {
         Employee employee = employeeRepository.getById(id);
         model.addAttribute(employee);

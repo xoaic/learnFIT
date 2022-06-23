@@ -10,97 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7473e58c-618e-4dea-85f8-cac46864ad4a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../DSA/Tutorial/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../DSA/Tutorial/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../DSA/Tutorial/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../DSA/Tutorial/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../DSA/Tutorial/DSATutorial.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../DSA/Tutorial/src/Tut01/Exe1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../DSA/Tutorial/src/Tut01/Exe2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../DSA/Tutorial/src/Tut01/Exe3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../DSA/Tutorial/src/Tut01/Exe4.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../DSA/Tutorial/src/Tut02/Exe1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../DSA/Tutorial/src/Tut02/Exe2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../DSA/Tutorial/src/Tut02/Exe3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../DSA/Tutorial/src/Tut02/Exe4.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../PR1/Final Project/asg1-starterpack.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../PR2/Tutorial/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../PR2/Tutorial/.idea/libraries/javaparser_core_3_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../PR2/Tutorial/.idea/libraries/t3_utils.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../PR2/Tutorial/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../PR2/Tutorial/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../PR2/Tutorial/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../PR2/Tutorial/Tutorial.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../PR2/Tutorial/src/Tut01/Array.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../PR2/Tutorial/src/Tut01/Interest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../PR2/Tutorial/src/Tut01/Strings.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../PR2/Tutorial/src/Tut03/Ex1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../PR2/Tutorial/src/Tut03/Ex2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../PR2/Tutorial/src/Tut03/Ex3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../PR2/Tutorial/src/Tut03/Ex5.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../PR2/Tutorial/src/Tut03/Hello.j" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../PR2/Tutorial/src/Tut03/ProgWriter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../PR2/Tutorial/src/Tut03/javaparser-core-3.0.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../PR2/Tutorial/src/Tut03/t3-utils.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../PR2/Tutorial/src/Tut03/template" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../PR2/Tutorial/src/utils/AttrRef.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../PR2/Tutorial/src/utils/DOpt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../PR2/Tutorial/src/utils/DomainConstraint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../PR2/Tutorial/src/utils/NotPossibleException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../PR2/Tutorial/src/utils/OptType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../PR2/Tutorial/src/utils/System.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../PR2/Tutorial/src/utils/TextIO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../PR2/Tutorial/src/utils/collections/Collection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DoMinhVuong_1901040247_SE2_Tut3.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/JSP_Servlet_war.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/JSP_Servlet_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_4_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_8_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_8_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_8_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_8_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jsp_api.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jstl.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_28.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/servlet_api.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JSP-Servlet.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jspservlet/dao/BookDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jspservlet/dbconnect/DBConnect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jspservlet/entity/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jspservlet/servlet/ServletBook.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/addbook.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/booklist.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/editbook.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MySQLConnect/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MySQLConnect/.idea/libraries/mysql_connector_java_8_0_28.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MySQLConnect/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MySQLConnect/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MySQLConnect/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MySQLConnect/MySQLConnect.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MySQLConnect/src/mysqlconnect/MySQLConnect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringBoot/.jpb/persistence-units.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringBoot/src/main/java/com/example/springboot/controller/EmployeeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringBoot/src/main/java/com/example/springboot/model/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringBoot/src/main/java/com/example/springboot/repository/EmployeeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringBoot/src/main/resources/templates/employeeDetail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringBoot/src/main/resources/templates/employeeList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../SE2Tutorial/MySQLConnect/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../SE2Tutorial/MySQLConnect/.idea/libraries/mysql_connector_java_8_0_28.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../SE2Tutorial/MySQLConnect/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../SE2Tutorial/MySQLConnect/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../SE2Tutorial/MySQLConnect/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../SE2Tutorial/MySQLConnect/MySQLConnect.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../SE2Tutorial/MySQLConnect/src/mysqlconnect/MySQLConnect.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../BDM/Project/Dataset/healthcare-dataset-stroke-data.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../BDM/Project/StrokePrediction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -260,6 +172,7 @@
       <workItem from="1645494856646" duration="2368000" />
       <workItem from="1645969448397" duration="613000" />
       <workItem from="1646537426254" duration="944000" />
+      <workItem from="1655078306636" duration="507000" />
     </task>
     <servers />
   </component>
